@@ -26,7 +26,7 @@ endif
 
 INC = -I$(MLX_DIR)
 
-SRCS = main.c
+SRCS = src/main.c
 
 OBJS = $(SRCS:.c=.o)
 
