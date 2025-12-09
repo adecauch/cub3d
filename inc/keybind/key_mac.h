@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 23:01:51 by adecauch          #+#    #+#             */
-/*   Updated: 2025/04/27 23:01:54 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/09 21:01:47 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@
 # define KEY_DOWN 125
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
+# define KEY_ENTER 36
 
 #endif

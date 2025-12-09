@@ -6,31 +6,27 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:36:06 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/09 13:54:48 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/09 20:40:48 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "game.h"
 
-typedef enum e_state
+int	main(void)
 {
-	START,
-	GAME,
-	MENU,
-	GAMEOVER,
-	WIN
-} t_state;
+	t_data	data;
 
-typedef struct s_data
-{
-	t_enemy_node	*enemy_list;
-	t_texture		texture;
-	char			**map;
-	t_player		player;
-	t_state			state;
-}					t_data;
-
-int main(char **argv, int argc)
-{
-	printf("test\n");
+	data.mlx = mlx_init();
+	if (!data.mlx)
+		return (1);
+	data.win = mlx_new_window(data.mlx, W_WIDTH, W_HEIGHT, "Cub3D - Start Menu");
+	data.state = MENU; // On commence sur le menu
+	// clavier
+	mlx_hook(data.win, KeyPress, KeyPressMask, key_handler, &data);
+	// croix rouge
+	mlx_hook(data.win, DestroyNotify, StructureNotifyMask, close_game, &data);
+	// boucle de rendu
+	mlx_loop_hook(data.mlx, game_loop, &data);
+	mlx_loop(data.mlx);
+	return (0);
 }
