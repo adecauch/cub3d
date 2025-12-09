@@ -8,13 +8,16 @@ typedef struct s_img
     char    *path;
     char    *addr;
     void    *img;
+    int     bpp;
+    int     line_len;
+    int     endian;
 }   t_img;
 
 typedef struct s_texture
 {
     t_img south;
     t_img north;
-    t_img ouest;
+    t_img weast;
     t_img east;
     int floor_color;
     int ceil_color;

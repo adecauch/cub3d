@@ -2,11 +2,13 @@
 #define CUB_3D_H
 
 #include <stddef.h>
+#include "data.h"
 
+void init_data(t_data *data);
 
 ////////////////////////////// todo parsing
 
-void ft_parsing(char *file_name, t_data data);
+void ft_parsing(char *file_name, t_data *data);
 int ft_read_file(int fd, char ***file_content);
 int open_files(char *str);
 int verif_files(char **files);

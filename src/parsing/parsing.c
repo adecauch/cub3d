@@ -6,7 +6,7 @@
 /*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:57:16 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/09 00:03:57 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/09 00:43:21 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void ft_parsing(char *file_name, t_data *data)
     
     if(ft_read_file(open_files(file_name), &res))
         return ;
-    
     if(verif_files(res))
         return ;
+    (void)data;
 }
