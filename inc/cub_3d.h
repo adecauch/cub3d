@@ -14,6 +14,9 @@ int open_files(char *str);
 int verif_files(char **files);
 int skip_isspace(char *str);
 int	ft_check_map(char **map);
+void extract_color(char *color, t_data *data);
+int extract_config(char **file_content, t_data *data);
+int extract_map(char **file_content, t_data *data);
 
 //////////////////////////// libft
 
@@ -27,9 +30,12 @@ size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *s);
 int	ft_strncmp(const char	*s1, const char	*s2, unsigned int n);
 char	*ft_strchr(const char *str, int c);
+int	ft_atoi(const char *str);
+int	ft_isdigit(int c);
 
 //////////////////////////////////  ! DEBUG
 
 void ft_print_tab(char **tab);
+void ft_print_data(t_data data);
 
 #endif

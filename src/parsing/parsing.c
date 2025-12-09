@@ -6,7 +6,7 @@
 /*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:57:16 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/09 00:43:21 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/09 22:25:46 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 
 void ft_parsing(char *file_name, t_data *data)
 {
-    char **res;
-    res = NULL;
+    char **file_contnent;
+    file_contnent = NULL;
     
-    if(ft_read_file(open_files(file_name), &res))
+    if(ft_read_file(open_files(file_name), &file_contnent))
         return ;
-    if(verif_files(res))
+    if(verif_files(file_contnent))
         return ;
-    (void)data;
+    if(extract_warpconfig(file_contnent, data))
+        return ;
+    // (void)data;
 }

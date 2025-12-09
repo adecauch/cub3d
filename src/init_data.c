@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setup.c                                            :+:      :+:    :+:   */
+/*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/09 00:37:27 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/09 13:41:47 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static void init_player(t_player *player)
 
 void init_data(t_data *data)
 {
-    ft_memset(data, 0, sizeof(t_data)); 
+    ft_memset(data, 0, sizeof(t_data));
+    data->map = NULL;
     init_player(&data->player);
     init_enemy_list(&data->enemy_list);
 }
