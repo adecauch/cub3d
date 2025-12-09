@@ -5,10 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/22 23:27:34 by adecauch          #+#    #+#              #
-#    Updated: 2025/04/22 23:27:37 by adecauch         ###   ########.fr        #
+#    Created: 2025/10/27 09:10:07 by adecauch          #+#    #+#              #
+#    Updated: 2025/12/05 05:27:48 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m
 
 NAME = Cube3D
 CC = cc
@@ -24,25 +28,26 @@ else
     LIBS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 endif
 
-INC = -I$(MLX_DIR)
-
 SRCS = src/main.c
 
-OBJS = $(SRCS:.c=.o)
-
+INC = -I$(MLX_DIR)
+OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $@
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)Compilation successful!$(RESET)"
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+%.o: %.cpp
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@echo "$(RED)Removed object files$(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(RED)Removed executable$(RESET)"
 
 re: fclean all
 
