@@ -6,7 +6,7 @@
 #    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/27 09:10:07 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/09 20:43:11 by adecauch         ###   ########.fr        #
+#    Updated: 2025/12/10 10:24:06 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,37 @@ SRCS = src/main.c \
 	   src/engine/game.c \
 	   src/engine/key_handler.c \
 	   src/engine/render_game.c \
-	   src/engine/render_menu.c
+	   src/engine/render_menu.c \
+	   src/init_data.c \
+	   src/debug/debug_utils.c \
+	   src/debug/print_data.c \
+	   src/libft/ft_atoi.c \
+	   src/libft/ft_bzero.c \
+	   src/libft/ft_isdigit.c \
+	   src/libft/ft_memcpy.c \
+	   src/libft/ft_memset.c \
+	   src/libft/ft_putstr.c \
+	   src/libft/ft_realloc.c \
+	   src/libft/ft_strchr.c \
+	   src/libft/ft_strdup.c \
+	   src/libft/ft_strlen.c \
+	   src/libft/ft_strncmp.c \
+	   src/libft/get_next_line_bonus.c \
+	   src/libft/print_error.c \
+	   src/parsing/extract_color.c \
+	   src/parsing/extract_config.c \
+	   src/parsing/extract_map.c \
+	   src/parsing/parsing.c \
+	   src/parsing/read_file.c \
+	   src/parsing/string_utils.c \
+	   src/parsing/verif_file.c \
+	   src/parsing/verif_file_2.c \
+	   src/parsing/verif_map.c
 
-INC = -I$(MLX_DIR) -Iinc
+INC = -I$(MLX_DIR) -Iinc -Iinc/struct -Iinc/keybind
+
 OBJS = $(SRCS:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
