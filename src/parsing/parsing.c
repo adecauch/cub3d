@@ -23,7 +23,7 @@ void ft_parsing(char *file_name, t_data *data)
         return ;
     if(verif_files(file_contnent))
         return ;
-    if(extract_warpconfig(file_contnent, data))
+    if(extract_config(file_contnent, data))
         return ;
     // (void)data;
 }

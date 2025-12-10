@@ -2,7 +2,7 @@
 #define CUB_3D_H
 
 #include <stddef.h>
-#include "data.h"
+#include "struct/data.h"
 
 void init_data(t_data *data);
 
