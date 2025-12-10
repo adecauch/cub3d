@@ -6,7 +6,7 @@
 /*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 12:23:10 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/09 13:09:20 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/10 14:39:25 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,19 @@ static int parse_rgb_line(char *line, int *color_out)
     return (0);
 }
 
-void extract_color(char *color, t_data *data)
+int extract_color(char *color, t_data *data)
 {
 
     if(*color  == 'C')
-        parse_rgb_line((color + 1 + skip_isspace(color + 1)), &data->texture.ceil_color);
+    {
+        if(parse_rgb_line((color + 1 + skip_isspace(color + 1)), &data->texture.ceil_color))
+            return (1);
+    }
+        
     if(*color == 'F')
-        parse_rgb_line((color + 1 + skip_isspace(color + 1)), &data->texture.floor_color);
+    {
+        if(parse_rgb_line((color + 1 + skip_isspace(color + 1)), &data->texture.floor_color))
+            return(1);
+    }
+    return(0);
 }

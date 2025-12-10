@@ -14,9 +14,10 @@ int open_files(char *str);
 int verif_files(char **files);
 int skip_isspace(char *str);
 int	ft_check_map(char **map);
-void extract_color(char *color, t_data *data);
+int extract_color(char *color, t_data *data);
 int extract_config(char **file_content, t_data *data);
 int extract_map(char **file_content, t_data *data);
+void extract_data_player(char **map, t_player *player);
 
 //////////////////////////// libft
 

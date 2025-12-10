@@ -12,3 +12,11 @@ donnée nécessaire:
 
 
 !!! il y a une fonction init_data au debut on init tout les pointeur de data a null dedans comme ca on se casse pas les couille on a juste une fonction free a la fin qui free tout sans ce demander si on a deja malloc ou nan donc pense bien a rajouter les variable que tu va rajouter dans data dedans
+
+
+
+Direction,Le Joueur Regarde...,dir_x (Horizontal),dir_y (Vertical),Explication
+North,Le haut de la carte,0,-1,"Ne bouge pas horizontalement, recule sur Y (va vers le haut)."
+South,Le bas de la carte,0,1,"Ne bouge pas horizontalement, avance sur Y (va vers le bas)."
+East,La droite de la carte,1,0,"Avance sur X, ne bouge pas verticalement."
+West,La gauche de la carte,-1,0,"Recule sur X, ne bouge pas verticalement."

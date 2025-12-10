@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/09 20:58:15 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:19:37 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	close_game(t_data *data)
 // Fonction principale du jeu
 int	game(t_data *data)
 {
-	data->mlx = mlx_init();
 	if (!data->mlx)
 		return (1);
 	data->win = mlx_new_window(data->mlx, W_WIDTH, W_HEIGHT, "Cub3D - Start Menu");

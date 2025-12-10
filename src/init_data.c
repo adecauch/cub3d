@@ -6,12 +6,13 @@
 /*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/09 13:41:47 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/10 15:27:29 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
 #include "cub_3d.h"
+#include "mlx.h"
 
 static void init_enemy_list(t_enemy_node **list)
 {
@@ -36,4 +37,5 @@ void init_data(t_data *data)
     data->map = NULL;
     init_player(&data->player);
     init_enemy_list(&data->enemy_list);
+	data->mlx = mlx_init();
 }

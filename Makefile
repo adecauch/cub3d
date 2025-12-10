@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
+#    By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/27 09:10:07 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/10 10:24:06 by adecauch         ###   ########.fr        #
+#    Updated: 2025/12/10 12:54:13 by hectordavro      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRCS = src/main.c \
 	   src/libft/print_error.c \
 	   src/parsing/extract_color.c \
 	   src/parsing/extract_config.c \
-	   src/parsing/extract_map.c \
+	   src/parsing/extract_map_data.c \
 	   src/parsing/parsing.c \
 	   src/parsing/read_file.c \
 	   src/parsing/string_utils.c \
