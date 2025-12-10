@@ -6,7 +6,7 @@
 #    By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/27 09:10:07 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/10 12:54:13 by hectordavro      ###   ########.fr        #
+#    Updated: 2025/12/10 18:19:13 by hectordavro      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ SRCS = src/main.c \
 	   src/libft/ft_strncmp.c \
 	   src/libft/get_next_line_bonus.c \
 	   src/libft/print_error.c \
+	   src/libft/ft_strtrim.c \
+	   src/libft/ft_substr.c \
 	   src/parsing/extract_color.c \
 	   src/parsing/extract_config.c \
 	   src/parsing/extract_map_data.c \

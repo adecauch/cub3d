@@ -19,6 +19,8 @@ typedef struct s_texture
     t_img north;
     t_img weast;
     t_img east;
+    t_img menu_exit;
+    t_img menu_start;
     int floor_color;
     int ceil_color;
 }   t_texture ;

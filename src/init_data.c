@@ -6,7 +6,7 @@
 /*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/10 15:27:29 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/10 18:37:50 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ static void init_player(t_player *player)
     player->damage = 10;
 }
 
+static void init_texture_menu(t_texture *texture)
+{
+	texture->menu_exit.path = "data/texture/menu_exit.xpm";
+	texture->menu_start.path = "data/texture/menu_start.xpm";
+
+}
 
 void init_data(t_data *data)
 {
@@ -38,4 +44,5 @@ void init_data(t_data *data)
     init_player(&data->player);
     init_enemy_list(&data->enemy_list);
 	data->mlx = mlx_init();
+	init_texture_menu(&data->texture);
 }
