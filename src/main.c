@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:36:06 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/10 10:41:12 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:45:45 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int argc, char **argv)
     init_data(&data);
     if(argc != 2)
         return(print_error("Error: argument"), 1);
-    ft_parsing(argv[1], &data);
+    if(ft_parsing(argv[1], &data))
+        return(1);
     // ft_print_data(data);
 	return (game(&data));
 }

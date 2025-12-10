@@ -6,7 +6,7 @@
 /*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/08 23:59:59 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/10 11:42:33 by hectordavro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int open_files(char *str)
 {
 	int fd;
 
+    fd = 0;
+    if(ft_strncmp(".cub", str + (ft_strlen(str) - 4), 4))    
+        print_error("Error: extension not goot");
 	fd = open(str, O_RDONLY);
 	if(fd < 1)
 		print_error("Error: opening files");

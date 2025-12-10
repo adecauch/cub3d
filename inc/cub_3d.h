@@ -8,7 +8,7 @@ void init_data(t_data *data);
 
 ////////////////////////////// todo parsing
 
-void ft_parsing(char *file_name, t_data *data);
+int ft_parsing(char *file_name, t_data *data);
 int ft_read_file(int fd, char ***file_content);
 int open_files(char *str);
 int verif_files(char **files);
