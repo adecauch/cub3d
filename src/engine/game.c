@@ -33,3 +33,18 @@ int	close_game(t_data *data)
 	exit(0);
 	return (0);
 }
+
+// Fonction principale du jeu
+int	game(t_data *data)
+{
+	data->mlx = mlx_init();
+	if (!data->mlx)
+		return (1);
+	data->win = mlx_new_window(data->mlx, W_WIDTH, W_HEIGHT, "Cub3D - Start Menu");
+	data->state = MENU;
+	mlx_hook(data->win, KeyPress, KeyPressMask, key_handler, data);
+	mlx_hook(data->win, DestroyNotify, StructureNotifyMask, close_game, data);
+	mlx_loop_hook(data->mlx, game_loop, data);
+	mlx_loop(data->mlx);
+	return (0);
+}

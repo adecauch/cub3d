@@ -6,15 +6,15 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/09 20:59:16 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/10 08:07:50 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GAME_H
 # define GAME_H
 
-#define W_WIDTH 800
-#define W_HEIGHT 600
+#define W_WIDTH 1280
+#define W_HEIGHT 720
 
 #include "mlx.h"
 #include <stdlib.h>
@@ -111,6 +111,7 @@ void	render_game(t_data *data);
 
 /*-----game.c-----*/
 
+int		game(t_data *data);
 int		game_loop(t_data *data);
 int		close_game(t_data *data);
 
