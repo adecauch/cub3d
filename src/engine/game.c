@@ -41,6 +41,7 @@ int	game(t_data *data)
 		return (1);
 	data->win = mlx_new_window(data->mlx, W_WIDTH, W_HEIGHT, "Cub3D - Start Menu");
 	data->state = MENU;
+	data->menu = MENU_START;
 	mlx_hook(data->win, KeyPress, KeyPressMask, key_handler, data);
 	mlx_hook(data->win, DestroyNotify, StructureNotifyMask, close_game, data);
 	mlx_loop_hook(data->mlx, game_loop, data);

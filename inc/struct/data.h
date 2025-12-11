@@ -13,6 +13,12 @@ typedef enum e_state
     WIN
 } t_state;
 
+typedef enum e_menu
+{
+    MENU_START,
+    MENU_EXIT
+} t_menu;
+
 typedef struct s_data
 {
     t_enemy_node *enemy_list;
@@ -20,6 +26,7 @@ typedef struct s_data
     char **map;
     t_player player;
     t_state state;
+    t_menu menu;
     void *mlx;
     void *win;
 } t_data;
