@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/10 10:39:56 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:53:04 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,11 @@ void	render_game(t_data *data);
 int		game(t_data *data);
 int		game_loop(t_data *data);
 int		close_game(t_data *data);
+
+/*-----player_movement.c-----*/
+
+void	rotate_player(t_player *player, double rotation_speed);
+void	move_player(t_data *data, double direction);
+void	strafe_player(t_data *data, double direction);
 
 #endif

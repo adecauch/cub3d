@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+         #
+#    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/27 09:10:07 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/10 18:19:13 by hectordavro      ###   ########.fr        #
+#    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
+#    Updated: 2025/12/11 13:34:48 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS = src/main.c \
 	   src/engine/key_handler.c \
 	   src/engine/render_game.c \
 	   src/engine/render_menu.c \
+	   src/engine/player_movement.c \
 	   src/init_data.c \
 	   src/debug/debug_utils.c \
 	   src/debug/print_data.c \

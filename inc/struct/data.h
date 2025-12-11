@@ -23,6 +23,7 @@ typedef struct s_data
 {
     t_enemy_node *enemy_list;
     t_texture texture;
+    t_img render_img;
     char **map;
     t_player player;
     t_state state;
