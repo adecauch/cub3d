@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "cub_3d.h"
+#include "parsing.h"
 
 void	ft_putstr(char *str)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub_3d.h"
+#include "parsing.h"
 
 static int is_texture_line(char *s)
 {

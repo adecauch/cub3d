@@ -1,4 +1,4 @@
-#include "cub_3d.h"
+#include "parsing.h"
 #include "mlx.h"
 #include <stdio.h>
 
@@ -46,9 +46,9 @@ static int  extract_texture(char *texture, t_data *data)
     }
     if (!ft_strncmp(texture, "WE", 2))
     {
-        data->texture.weast.path = ft_strtrim(texture + 2 + skip_isspace(texture + 2), "\n");
-        // data->texture.weast.path[ft_strlen(data->texture.weast.path) - 1] = 0;
-        load_texture(&data->texture.weast, data->mlx);
+        data->texture.west.path = ft_strtrim(texture + 2 + skip_isspace(texture + 2), "\n");
+        // data->texture.west.path[ft_strlen(data->texture.west.path) - 1] = 0;
+        load_texture(&data->texture.west, data->mlx);
     }
     if (!ft_strncmp(texture, "EA", 2))
     {

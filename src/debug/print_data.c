@@ -1,4 +1,4 @@
-#include "cub_3d.h"
+#include "parsing.h"
 #include <stdio.h>
 
 void ft_print_data(t_data data)
@@ -16,7 +16,7 @@ void ft_print_data(t_data data)
     printf("player damage  [%d]\n", data.player.damage);
     printf("---------------------texture--------------------\n");
     printf("north texture path = [%s]\n", data.texture.north.path);
-    printf("weast texture path = [%s]\n", data.texture.weast.path);
+    printf("west texture path = [%s]\n", data.texture.west.path);
     printf("east texture path = [%s]\n", data.texture.east.path);
     printf("south texture path = [%s]\n", data.texture.south.path);
     printf("floor color = [%d]\n", data.texture.floor_color);

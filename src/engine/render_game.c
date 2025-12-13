@@ -145,7 +145,7 @@ static t_img	*get_wall_texture(t_ray *ray, t_data *data)
 		if (ray->ray_dir_x > 0)
 			return (&data->texture.east);
 		else
-			return (&data->texture.weast);
+			return (&data->texture.west);
 	}
 	else
 	{

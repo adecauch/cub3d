@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub_3d.h"
+#include "parsing.h"
 #include <stdlib.h>
 
 
-#include "cub_3d.h" // Pour ft_atoi, ft_isdigit
+#include "parsing.h" // Pour ft_atoi, ft_isdigit
 
 
 static int get_color_component(char **line_ptr, int *component_out)

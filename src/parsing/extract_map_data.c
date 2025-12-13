@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub_3d.h"
+#include "parsing.h"
 
 static void setup_diection(char direction, t_player *player)
 {

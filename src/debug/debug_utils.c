@@ -1,4 +1,4 @@
-#include "cub_3d.h"
+#include "parsing.h"
 #include <stdio.h>
 
 void ft_print_tab(char **tab)

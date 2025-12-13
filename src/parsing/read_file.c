@@ -12,7 +12,7 @@
 
 #include <fcntl.h>
 #include <stdio.h>
-#include "cub_3d.h"
+#include "parsing.h"
 #include "get_next_line_bonus.h"
 
 int open_files(char *str)

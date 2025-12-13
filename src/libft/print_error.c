@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub_3d.h"
+#include "parsing.h"
 #include "color.h"
 
 void print_error(char *str)

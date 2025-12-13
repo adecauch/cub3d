@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "game.h"
-#include "cub_3d.h"
+#include "parsing.h"
 #include "data.h"
 
 int	main(int argc, char **argv)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub_3d.h"
+#include "parsing.h"
 #include <stdio.h>
 
 static int	is_closed(char **map, int x, int y)

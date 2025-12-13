@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub_3d.h"
+#include "parsing.h"
 #include <stdlib.h>
 
 void	*ft_realloc(void *old, int old_size, int new_size, int data_size)

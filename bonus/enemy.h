@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enemy_struct.h                                     :+:      :+:    :+:   */
+/*   enemy.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:27:00 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/11 13:53:11 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/13 14:45:48 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_STRUCT_H
-# define ENEMY_STRUCT_H
+#ifndef ENEMY_H
+# define ENEMY_H
 
-typedef struct s_player
-{
-    double x;
-    double y;
-    double dir_x;
-    double dir_y;
-    double plane_x;
-    double plane_y;
-
-    double speed;
-    double health;
-    int damage;
-    //peut etre on rajoute une structure arme si on en meets plusieurs
-} t_player;
 
 typedef struct s_enemy
 {

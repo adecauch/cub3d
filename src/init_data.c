@@ -3,21 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/10 18:37:50 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/13 14:52:54 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "data.h"
-#include "cub_3d.h"
+#include "parsing.h"
 #include "mlx.h"
-
-static void init_enemy_list(t_enemy_node **list)
-{
-    *list = NULL;
-}
 
 static void init_player(t_player *player)
 {
@@ -42,7 +37,6 @@ void init_data(t_data *data)
     ft_memset(data, 0, sizeof(t_data));
     data->map = NULL;
     init_player(&data->player);
-    init_enemy_list(&data->enemy_list);
 	data->mlx = mlx_init();
 	init_texture_menu(&data->texture);
 }

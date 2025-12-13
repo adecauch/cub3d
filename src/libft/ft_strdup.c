@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub_3d.h"
+#include "parsing.h"
 #include <stdlib.h>
 
 char	*ft_strdup(const char *s)
