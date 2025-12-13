@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:15:05 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/13 14:51:08 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:22:01 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ typedef struct s_data
 	t_menu			menu;
 	void			*mlx;
 	void			*win;
-}					t_data;
+}	t_data;
 
 #endif

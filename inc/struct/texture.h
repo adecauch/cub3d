@@ -6,14 +6,14 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:23:35 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/13 14:35:32 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:22:18 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEXTURE_H
 # define TEXTURE_H
 
-#include "image.h"
+# include "image.h"
 
 typedef struct s_texture
 {
@@ -25,6 +25,6 @@ typedef struct s_texture
 	t_img	menu_start;
 	int		floor_color;
 	int		ceil_color;
-}			t_texture;
+}	t_texture;
 
 #endif
