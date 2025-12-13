@@ -6,7 +6,7 @@
 #    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/11 13:34:48 by adecauch         ###   ########.fr        #
+#    Updated: 2025/12/13 16:57:07 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ endif
 SRCS = src/main.c \
 	   src/engine/game.c \
 	   src/engine/key_handler.c \
-	   src/engine/render_game.c \
-	   src/engine/render_menu.c \
+	   src/engine/render.c \
+	   src/engine/raycasting.c \
 	   src/engine/player_movement.c \
 	   src/init_data.c \
 	   src/debug/debug_utils.c \

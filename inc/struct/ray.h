@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_menu.c                                      :+:      :+:    :+:   */
+/*   ray.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 20:35:56 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/11 08:47:37 by adecauch         ###   ########.fr       */
+/*   Created: 2025/12/13 16:58:16 by adecauch          #+#    #+#             */
+/*   Updated: 2025/12/13 17:05:22 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#ifndef RAY_H
+# define RAY_H
 
-void	render_menu(t_data *data)
+typedef struct s_ray
 {
-	if (data->menu == MENU_START)
-		mlx_put_image_to_window(data->mlx, data->win, data->texture.menu_start.img, 0, 0);
-	else
-		mlx_put_image_to_window(data->mlx, data->win, data->texture.menu_exit.img, 0, 0);
-}
+	double	camera_x;
+	double	ray_dir_x;
+	double	ray_dir_y;
+	int		map_x;
+	int		map_y;
+	double	side_dist_x;
+	double	side_dist_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+	double	perp_wall_dist;
+	double	wall_x;
+	int		step_x;
+	int		step_y;
+	int		hit;
+	int		side;
+}	t_ray;
+
+#endif

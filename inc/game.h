@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/13 16:05:16 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/13 16:51:07 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@
 
 int		key_handler(int keycode, t_data *data);
 
-/*-----render_menu.c-----*/
+/*-----render.c-----*/
 
 void	render_menu(t_data *data);
-
-/*-----render_game.c-----*/
-
 void	render_game(t_data *data);
+
+/*-----raycasting.c-----*/
+
+void	raycasting(t_data *data);
 
 /*-----game.c-----*/
 

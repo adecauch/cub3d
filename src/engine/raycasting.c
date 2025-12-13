@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_game.c                                      :+:      :+:    :+:   */
+/*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:35:33 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/11 13:50:52 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:00:14 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include <math.h>
-
-//structure pour les variables de raycasting
-typedef struct s_ray
-{
-	double	camera_x;
-	double	ray_dir_x;
-	double	ray_dir_y;
-	int		map_x;
-	int		map_y;
-	double	side_dist_x;
-	double	side_dist_y;
-	double	delta_dist_x;
-	double	delta_dist_y;
-	double	perp_wall_dist;
-	double	wall_x;
-	int		step_x;
-	int		step_y;
-	int		hit;
-	int		side;
-}	t_ray;
+#include <ray.h>
 
 // dessine un pixel rapidement dans l'image
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
@@ -196,7 +177,7 @@ static void	draw_wall_column(t_data *data, int x, t_ray *ray, int draw_start, in
 		my_mlx_pixel_put(&data->render_img, x, y++, data->texture.floor_color);
 }
 
-void	render_game(t_data *data)
+void	raycasting(t_data *data)
 {
 	int		x;
 	t_ray	ray;
