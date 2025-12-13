@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:53:38 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/08 15:01:33 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/13 15:20:15 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
-#include "color.h"
 
 void print_error(char *str)
 {

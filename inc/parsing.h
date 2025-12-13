@@ -1,10 +1,11 @@
-#ifndef CUB_3D_H
-#define CUB_3D_H
+#ifndef PARSING_H
+#define PARSING_H
 
 #include <stddef.h>
 #include "struct/data.h"
 
 # define RED "\033[31m"
+# define RESET		"\033[0m"
 
 void init_data(t_data *data);
 
