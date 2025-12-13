@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_menu.c                                      :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:35:56 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/13 16:51:07 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:18:41 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void	render_menu(t_data *data)
 {
 	if (data->menu == MENU_START)
-		mlx_put_image_to_window(data->mlx, data->win, data->texture.menu_start.img, 0, 0);
+		mlx_put_image_to_window(data->mlx, data->win,
+			data->texture.menu_start.img, 0, 0);
 	else
-		mlx_put_image_to_window(data->mlx, data->win, data->texture.menu_exit.img, 0, 0);
+		mlx_put_image_to_window(data->mlx, data->win,
+			data->texture.menu_exit.img, 0, 0);
 }
 
 void	render_game(t_data *data)
