@@ -6,13 +6,12 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/11 13:46:48 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/13 16:15:59 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-// La boucle principale
 int	game_loop(t_data *data)
 {
 	if (data->state == MENU)
@@ -26,26 +25,30 @@ int	close_game(t_data *data)
 {
 	if (data->win)
 		mlx_destroy_window(data->mlx, data->win);
-	// if (data->mlx)
-		// mlx_destroy_display(data->mlx); pour LINUX
-	// free(data->mlx);
-	// je vais faire un fichier compatible avec les deux plus tard
 	exit(0);
 	return (0);
 }
+	/* if (data->mlx)
+		// mlx_destroy_display(data->mlx); pour LINUX
+	 free(data->mlx);
+	 je vais faire un fichier compatible avec les deux plus tard*/
 
-// Fonction principale du jeu
+void	init_game(t_data *data)
+{
+	data->win = mlx_new_window(data->mlx, W_WIDTH, W_HEIGHT, "Cube3D");
+	data->render_img.img = mlx_new_image(data->mlx, W_WIDTH, W_HEIGHT);
+	data->render_img.addr = mlx_get_data_addr(data->render_img.img,
+			&data->render_img.bpp, &data->render_img.line_len,
+			&data->render_img.endian);
+	data->state = MENU;
+	data->menu = MENU_START;
+}
+
 int	game(t_data *data)
 {
 	if (!data->mlx)
 		return (1);
-	data->win = mlx_new_window(data->mlx, W_WIDTH, W_HEIGHT, "Cub3D - Start Menu");
-	data->render_img.img = mlx_new_image(data->mlx, W_WIDTH, W_HEIGHT);
-	data->render_img.addr = mlx_get_data_addr(data->render_img.img,
-		&data->render_img.bpp, &data->render_img.line_len,
-		&data->render_img.endian);
-	data->state = MENU;
-	data->menu = MENU_START;
+	init_game(data);
 	mlx_hook(data->win, KeyPress, KeyPressMask, key_handler, data);
 	mlx_hook(data->win, DestroyNotify, StructureNotifyMask, close_game, data);
 	mlx_loop_hook(data->mlx, game_loop, data);
