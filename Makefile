@@ -32,7 +32,10 @@ SRCS = src/main.c \
 	   src/engine/game.c \
 	   src/engine/key_handler.c \
 	   src/engine/render.c \
-	   src/engine/raycasting.c \
+	   src/engine/raycasting/raycasting.c \
+	   src/engine/raycasting/ray_init.c \
+	   src/engine/raycasting/ray_dda.c \
+	   src/engine/raycasting/ray_render.c \
 	   src/engine/player_movement.c \
 	   src/init_data.c \
 	   src/debug/debug_utils.c \
