@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.c                                             :+:      :+:    :+:   */
+/*   game_linux.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/13 16:15:59 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/15 13:51:28 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ int	close_game(t_data *data)
 {
 	if (data->win)
 		mlx_destroy_window(data->mlx, data->win);
+	if (data->mlx)
+		mlx_destroy_display(data->mlx);
+	free(data->mlx);
 	exit(0);
 	return (0);
 }
-	/* if (data->mlx)
-		// mlx_destroy_display(data->mlx); pour LINUX
-	 free(data->mlx);
-	 je vais faire un fichier compatible avec les deux plus tard*/
 
 void	init_game(t_data *data)
 {

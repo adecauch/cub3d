@@ -23,13 +23,15 @@ ifeq ($(UNAME_S),Darwin)
     CFLAGS += -DGL_SILENCE_DEPRECATION
     MLX_DIR = inc/mlx_macos
     LIBS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
+    GAME_SRC = src/engine/game_macos.c
 else
     MLX_DIR = inc/mlx_linux
     LIBS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
+    GAME_SRC = src/engine/game_linux.c
 endif
 
 SRCS = src/main.c \
-	   src/engine/game.c \
+	   $(GAME_SRC) \
 	   src/engine/key_handler.c \
 	   src/engine/render.c \
 	   src/engine/raycasting/raycasting.c \
