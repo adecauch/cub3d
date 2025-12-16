@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:40:50 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/13 17:22:01 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/16 16:10:49 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ typedef struct s_player
 	double	speed;
 	double	health;
 	int		damage;
-}	t_player;
+}			t_player;
 
 #endif

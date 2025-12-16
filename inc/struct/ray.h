@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:58:16 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/15 13:34:58 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/16 16:10:52 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ typedef struct s_ray
 	int		line_height;
 	int		draw_start;
 	int		draw_end;
-}	t_ray;
+}			t_ray;
 
 #endif

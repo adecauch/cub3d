@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:15:05 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/13 17:22:01 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/16 16:10:11 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 # define DATA_H
 
 # include "enum.h"
-# include "player.h"
 # include "image.h"
+# include "player.h"
 # include "texture.h"
 
 typedef struct s_data
 {
-	t_texture		texture;
-	t_img			render_img;
-	char			**map;
-	t_player		player;
-	t_state			state;
-	t_menu			menu;
-	void			*mlx;
-	void			*win;
-}	t_data;
+	t_texture	texture;
+	t_img		render_img;
+	char		**map;
+	t_player	player;
+	t_state		state;
+	t_menu		menu;
+	void		*mlx;
+	void		*win;
+}				t_data;
 
 #endif

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
-/* */
-/* :::      ::::::::   */
-/* parsing.h                                          :+:      :+:    :+:   */
-/* +:+ +:+         +:+     */
-/* By: <votre_pseudo> <votre_mail@student.42.f>   +#+  +:+       +#+        */
-/* +#+#+#+#+#+   +#+           */
-/* Created: 2025/12/16 16:00:00 by <votre_pseudo>    #+#    #+#             */
-/* Updated: 2025/12/16 16:00:00 by <votre_pseudo>   ###   ########.fr       */
-/* */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/16 16:09:35 by ramahrez          #+#    #+#             */
+/*   Updated: 2025/12/16 16:09:38 by ramahrez         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSING_H
 # define PARSING_H
 
-# include <stddef.h>
 # include "struct/data.h"
+# include <stddef.h>
 
 /*Macro get next lline*/
-#  define BUFFER_SIZE 1024
-#  define FD 512
+# define BUFFER_SIZE 1024
+# define FD 512
 /* --- Couleurs d'erreur */
 # define RED "\033[31m"
 # define RESET "\033[0m"
