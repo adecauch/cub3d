@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/16 15:33:54 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/16 16:06:59 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "parsing.h"
 #include <fcntl.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int	open_files(char *str)
 {

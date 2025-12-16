@@ -6,11 +6,17 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:56:38 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/03/31 22:47:33 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/16 16:05:42 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+#include <stdlib.h>
+#include "parsing.h"
+#include "struct/get_next_line_struct.h"
 
 void	ft_strlcpy(char *src, char *dest, int l)
 {

@@ -16,6 +16,9 @@
 # include <stddef.h>
 # include "struct/data.h"
 
+/*Macro get next lline*/
+#  define BUFFER_SIZE 1024
+#  define FD 512
 /* --- Couleurs d'erreur */
 # define RED "\033[31m"
 # define RESET "\033[0m"
