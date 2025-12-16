@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
+#    By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/13 16:57:07 by adecauch         ###   ########.fr        #
+#    Updated: 2025/12/16 15:38:12 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,6 @@ SRCS = src/main.c \
 	   src/parsing/read_file.c \
 	   src/parsing/string_utils.c \
 	   src/parsing/verif_file.c \
-	   src/parsing/verif_file_2.c \
 	   src/parsing/verif_map.c
 
 INC = -I$(MLX_DIR) -Iinc -Iinc/struct -Iinc/keybind

@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/16 15:31:50 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:33:54 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,50 +21,71 @@ int	open_files(char *str)
 
 	fd = 0;
 	if (ft_strncmp(".cub", str + (ft_strlen(str) - 4), 4))
+	{
 		print_error("Error: extension not goot");
+	}
 	fd = open(str, O_RDONLY);
 	if (fd < 1)
 		print_error("Error: opening files");
 	return (fd);
 }
 
+static void	clean_and_error(char ***content, int size, char *line, char *msg)
+{
+	int	i;
+
+	i = size;
+	while (i > 0)
+		free((*content)[--i]);
+	free(*content);
+	free(line);
+	print_error(msg);
+}
+
+static int	add_line_to_content(char ***content, char *line, int *size)
+{
+	char	**tmp;
+
+	tmp = ft_realloc(*content, *size, *size + 2, sizeof(char *));
+	if (!tmp)
+	{
+		clean_and_error(content, *size, line,
+			"Error: allocation failed (realloc)\n");
+		return (1);
+	}
+	*content = tmp;
+	(*content)[*size] = ft_strdup(line);
+	if (!(*content)[*size])
+	{
+		clean_and_error(content, *size, line,
+			"Error: allocation failed (strdup)\n");
+		return (1);
+	}
+	(*content)[*size + 1] = 0;
+	(*size)++;
+	free(line);
+	return (0);
+}
+
 int	ft_read_file(int fd, char ***file_content)
 {
 	char	*str;
-	char	**tmp;
 	int		size;
+	int		ret;
 
 	size = 0;
 	if (fd < 0)
 		return (1);
-	while ((str = get_next_line(fd)) != NULL)
+	while (1)
 	{
-		tmp = ft_realloc(*file_content, size, size + 2, sizeof(char *));
-		if (!tmp)
-		{
-			while (size > 0)
-				free((*file_content)[--size]);
-			free(*file_content);
-			free(str);
-			print_error("Error: allocation failed\n");
+		str = get_next_line(fd);
+		if (str == NULL)
+			break ;
+		ret = add_line_to_content(file_content, str, &size);
+		if (ret != 0)
 			return (1);
-		}
-		*file_content = tmp;
-		(*file_content)[size] = ft_strdup(str);
-		free(str);
-		if (!(*file_content)[size])
-		{
-			while (size > 0)
-				free((*file_content)[--size]);
-			free(*file_content);
-			print_error("Error: strdup failed\n");
-			return (1);
-		}
-		size++;
 	}
-	if (*file_content)
-		(*file_content)[size] = 0;
-	if (!file_content[0])
+	if (size == 0)
 		return (-1);
 	return (0);
 }

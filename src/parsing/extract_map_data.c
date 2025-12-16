@@ -6,11 +6,29 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:43:01 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/16 15:31:40 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:37:47 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+
+static void	setup_direction_two(char direction, t_player *player)
+{
+	if (direction == 'E')
+	{
+		player->dir_x = 1;
+		player->dir_y = 0;
+		player->plane_x = 0;
+		player->plane_y = 0.66;
+	}
+	if (direction == 'W')
+	{
+		player->dir_x = -1;
+		player->dir_y = 0;
+		player->plane_x = 0;
+		player->plane_y = -0.66;
+	}
+}
 
 static void	setup_diection(char direction, t_player *player)
 {
@@ -28,20 +46,7 @@ static void	setup_diection(char direction, t_player *player)
 		player->plane_x = -0.66;
 		player->plane_y = 0;
 	}
-	if (direction == 'E')
-	{
-		player->dir_x = 1;
-		player->dir_y = 0;
-		player->plane_x = 0;
-		player->plane_y = 0.66;
-	}
-	if (direction == 'W')
-	{
-		player->dir_x = -1;
-		player->dir_y = 0;
-		player->plane_x = 0;
-		player->plane_y = -0.66;
-	}
+	setup_direction_two(direction, player);
 }
 
 static void	setup_player(int x, int y, char direction, t_player *player)

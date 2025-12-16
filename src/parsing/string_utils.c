@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   string_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:11:31 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/08 21:11:40 by hectordavro      ###   ########.fr       */
+/*   Updated: 2025/12/16 15:33:57 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
-
-int skip_isspace(char *str)
+int	skip_isspace(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(str[i] && str[i] <= 32)
-        i++;
-    return (i);
+	i = 0;
+	while (str[i] && str[i] <= 32)
+		i++;
+	return (i);
 }
