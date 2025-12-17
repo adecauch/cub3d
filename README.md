@@ -20,3 +20,7 @@ North,Le haut de la carte,0,-1,"Ne bouge pas horizontalement, recule sur Y (va v
 South,Le bas de la carte,0,1,"Ne bouge pas horizontalement, avance sur Y (va vers le bas)."
 East,La droite de la carte,1,0,"Avance sur X, ne bouge pas verticalement."
 West,La gauche de la carte,-1,0,"Recule sur X, ne bouge pas verticalement."
+
+cmd pour norminette sans mlx.h :
+
+norminette $(find src inc -type f \( -name "*.c" -o -name "*.h" \) ! -path "*/mlx_*/*")

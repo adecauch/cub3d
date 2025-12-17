@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   extract_config.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/16 15:35:35 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/17 15:57:34 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "parsing.h"
-#include <stdio.h>
 
 static int	load_texture(t_img *texture, void *mlx)
 {
@@ -75,10 +74,7 @@ static int	extract_element(char **file_content, t_data *data)
 		if (ft_strchr("NSWEA", file_content[i][skip]))
 		{
 			if (extract_texture(file_content[i] + skip, data))
-			{
-				printf("ok4");
 				return (1);
-			}
 		}
 		if (ft_strchr("CF", file_content[i][skip]))
 		{
@@ -92,8 +88,6 @@ static int	extract_element(char **file_content, t_data *data)
 
 static int	load_menu(t_data *data)
 {
-	printf("%s", data->texture.menu_exit.path);
-	printf("%s", data->texture.menu_start.path);
 	if (load_texture(&data->texture.menu_exit, data->mlx))
 	{
 		print_error("Error: load texture path: data/texture/menu_exit.xpm");
@@ -110,10 +104,7 @@ static int	load_menu(t_data *data)
 int	extract_config(char **file_content, t_data *data)
 {
 	if (extract_element(file_content, data))
-	{
-		printf("ok3");
 		return (1);
-	}
 	if (extract_map(file_content, data))
 		return (1);
 	extract_data_player(data->map, &data->player);
