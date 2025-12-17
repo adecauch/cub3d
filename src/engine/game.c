@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:27:02 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/17 17:50:08 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	init_game(t_data *data)
 			&data->render_img.endian);
 	data->state = MENU;
 	data->menu = MENU_START;
+	data->mouse_x = W_WIDTH / 2;
 }
 
 int	game(t_data *data)
@@ -47,8 +48,9 @@ int	game(t_data *data)
 	if (!data->mlx)
 		return (1);
 	init_game(data);
-	mlx_hook(data->win, 2, 1L << 0, key_press, data);
-	mlx_hook(data->win, 3, 1L << 1, key_release, data);
+	mlx_hook(data->win, KEY_PRESS, KEY_PRESS_MASK, key_press, data);
+	mlx_hook(data->win, KEY_RELEASE, KEY_RELEASE_MASK, key_release, data);
+	mlx_hook(data->win, MOTION_NOTIFY, POINTER_MOTION_MASK, mouse_move, data);
 	mlx_hook(data->win, DESTROY_NOTIFY, STRUCTURE_NOTIFY_MASK, close_game,
 		data);
 	mlx_loop_hook(data->mlx, game_loop, data);

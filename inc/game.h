@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:27:07 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/17 17:49:58 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 
 int		key_press(int keycode, t_data *data);
 int		key_release(int keycode, t_data *data);
+int		mouse_move(int x, int y, t_data *data);
 
 /*-----render.c-----*/
 
