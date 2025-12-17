@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/15 13:33:59 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/17 17:27:07 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@
 
 /*-----key_handler.c-----*/
 
-int		key_handler(int keycode, t_data *data);
+int		key_press(int keycode, t_data *data);
+int		key_release(int keycode, t_data *data);
 
 /*-----render.c-----*/
 
@@ -67,6 +68,7 @@ int		game(t_data *data);
 void	rotate_player(t_player *player, double rotation_speed);
 void	move_player(t_data *data, double direction);
 void	strafe_player(t_data *data, double direction);
+void	update_player_movement(t_data *data);
 
 /*-----cleanup_macos.c / cleanup_linux.c-----*/
 

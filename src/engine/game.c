@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 16:25:00 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/17 17:27:02 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int	game_loop(t_data *data)
 	if (data->state == MENU)
 		render_menu(data);
 	else if (data->state == GAME)
+	{
+		update_player_movement(data);
 		render_game(data);
+	}
 	return (0);
 }
 
@@ -44,7 +47,8 @@ int	game(t_data *data)
 	if (!data->mlx)
 		return (1);
 	init_game(data);
-	mlx_hook(data->win, KEY_PRESS, KEY_PRESS_MASK, key_handler, data);
+	mlx_hook(data->win, 2, 1L << 0, key_press, data);
+	mlx_hook(data->win, 3, 1L << 1, key_release, data);
 	mlx_hook(data->win, DESTROY_NOTIFY, STRUCTURE_NOTIFY_MASK, close_game,
 		data);
 	mlx_loop_hook(data->mlx, game_loop, data);

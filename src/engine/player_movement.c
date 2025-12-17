@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:30:00 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/11 13:39:48 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/17 17:27:09 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	move_player(t_data *data, double direction)
 	double	new_y;
 	double	move_speed;
 
-	move_speed = 0.1 * direction;
+	move_speed = 0.04 * direction;
 	new_x = data->player.x + data->player.dir_x * move_speed;
 	new_y = data->player.y + data->player.dir_y * move_speed;
 	if (can_move_to(data, new_x, data->player.y))
@@ -67,11 +67,27 @@ void	strafe_player(t_data *data, double direction)
 	double	new_y;
 	double	move_speed;
 
-	move_speed = 0.1 * direction;
+	move_speed = 0.05 * direction;
 	new_x = data->player.x + data->player.plane_x * move_speed;
 	new_y = data->player.y + data->player.plane_y * move_speed;
 	if (can_move_to(data, new_x, data->player.y))
 		data->player.x = new_x;
 	if (can_move_to(data, data->player.x, new_y))
 		data->player.y = new_y;
+}
+
+void	update_player_movement(t_data *data)
+{
+	if (data->keys[KEY_W])
+		move_player(data, 1.0);
+	if (data->keys[KEY_S])
+		move_player(data, -1.0);
+	if (data->keys[KEY_A])
+		strafe_player(data, -1.0);
+	if (data->keys[KEY_D])
+		strafe_player(data, 1.0);
+	if (data->keys[KEY_LEFT])
+		rotate_player(&data->player, -0.03);
+	if (data->keys[KEY_RIGHT])
+		rotate_player(&data->player, 0.03);
 }
