@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_linux.c                                       :+:      :+:    :+:   */
+/*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/15 13:51:28 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/17 16:25:00 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,7 @@ int	game_loop(t_data *data)
 
 int	close_game(t_data *data)
 {
-	if (data->win)
-		mlx_destroy_window(data->mlx, data->win);
-	if (data->mlx)
-		mlx_destroy_display(data->mlx);
-	free(data->mlx);
+	cleanup_data(data);
 	exit(0);
 	return (0);
 }

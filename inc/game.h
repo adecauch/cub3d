@@ -68,4 +68,9 @@ void	rotate_player(t_player *player, double rotation_speed);
 void	move_player(t_data *data, double direction);
 void	strafe_player(t_data *data, double direction);
 
+/*-----cleanup_macos.c / cleanup_linux.c-----*/
+
+void	cleanup_data(t_data *data);
+void	free_file_content(char **file_content);
+
 #endif

@@ -27,8 +27,8 @@ static void	init_player(t_player *player)
 
 static void	init_texture_menu(t_texture *texture)
 {
-	texture->menu_exit.path = "data/texture/menu_exit.xpm";
-	texture->menu_start.path = "data/texture/menu_start.xpm";
+	texture->menu_exit.path = ft_strdup("data/texture/menu_exit.xpm");
+	texture->menu_start.path = ft_strdup("data/texture/menu_start.xpm");
 }
 
 void	init_data(t_data *data)

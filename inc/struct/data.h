@@ -22,6 +22,7 @@ typedef struct s_data
 {
 	t_texture	texture;
 	t_img		render_img;
+	char		**file_content;
 	char		**map;
 	t_player	player;
 	t_state		state;

@@ -17,14 +17,12 @@
 
 int	ft_parsing(char *file_name, t_data *data)
 {
-	char	**file_contnent;
-
-	file_contnent = NULL;
-	if (ft_read_file(open_files(file_name), &file_contnent))
+	data->file_content = NULL;
+	if (ft_read_file(open_files(file_name), &data->file_content))
 		return (1);
-	if (verif_files(file_contnent))
+	if (verif_files(data->file_content))
 		return (1);
-	if (extract_config(file_contnent, data))
+	if (extract_config(data->file_content, data))
 		return (1);
 	return (0);
 }
