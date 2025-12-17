@@ -14,30 +14,15 @@
 
 int	mouse_move(int x, int y, t_data *data)
 {
-	int				delta_x;
-	double			rotation;
-	int				center_x;
-	int				center_y;
-	static int		first_move = 1;
+	int		delta_x;
+	double	rotation;
 
 	(void)y;
 	if (data->state != GAME)
 		return (0);
-	center_x = W_WIDTH / 2;
-	center_y = W_HEIGHT / 2;
-	if (first_move)
-	{
-		first_move = 0;
-		mlx_mouse_hide(data->mlx, data->win);
-		mlx_mouse_move(data->mlx, data->win, center_x, center_y);
-		return (0);
-	}
-	delta_x = x - center_x;
-	if (delta_x != 0)
-	{
-		rotation = delta_x * 0.002;
-		rotate_player(&data->player, rotation);
-		mlx_mouse_move(data->mlx, data->win, center_x, center_y);
-	}
+	delta_x = x - data->mouse_x;
+	data->mouse_x = x;
+	rotation = delta_x * 0.002;
+	rotate_player(&data->player, rotation);
 	return (0);
 }
