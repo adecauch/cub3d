@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:49:58 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/17 22:57:15 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ void	rotate_player(t_player *player, double rotation_speed);
 void	move_player(t_data *data, double direction);
 void	strafe_player(t_data *data, double direction);
 void	update_player_movement(t_data *data);
+
+/*-----minimap.c-----*/
+
+void render_minimap(t_data *data);
+
 
 /*-----cleanup_macos.c / cleanup_linux.c-----*/
 
