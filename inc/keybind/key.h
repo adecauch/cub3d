@@ -19,10 +19,10 @@
 #  include "key_linux.h"
 # endif
 
-# define KeyPress 2
-# define KeyRelease 3
-# define DestroyNotify 17
-# define KeyPressMask (1L<<0)
-# define StructureNotifyMask (1L<<17)
+# define KEY_PRESS 2
+# define KEY_RELEASE 3
+# define DESTROY_NOTIFY 17
+# define KEY_PRESS_MASK 1L
+# define STRUCTURE_NOTIFY_MASK 131072L
 
 #endif

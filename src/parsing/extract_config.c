@@ -31,11 +31,6 @@ static int	load_texture(t_img *texture, void *mlx)
 		print_error("Error: Could not retrieve texture pixel address.\n");
 		return (1);
 	}
-	// if (texture->width != 64 || texture->height != 64)
-	// {
-	//      print_error("Error: Texture size is not 64x64. Check your XPM files.\n");
-	//      return (1);
-	// }
 	return (0);
 }
 

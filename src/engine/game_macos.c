@@ -45,8 +45,9 @@ int	game(t_data *data)
 	if (!data->mlx)
 		return (1);
 	init_game(data);
-	mlx_hook(data->win, KeyPress, KeyPressMask, key_handler, data);
-	mlx_hook(data->win, DestroyNotify, StructureNotifyMask, close_game, data);
+	mlx_hook(data->win, KEY_PRESS, KEY_PRESS_MASK, key_handler, data);
+	mlx_hook(data->win, DESTROY_NOTIFY, STRUCTURE_NOTIFY_MASK, close_game,
+		data);
 	mlx_loop_hook(data->mlx, game_loop, data);
 	mlx_loop(data->mlx);
 	return (0);
