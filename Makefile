@@ -39,7 +39,7 @@ SRCS = src/main.c \
 	   src/engine/raycasting/ray_dda.c \
 	   src/engine/raycasting/ray_render.c \
 	   src/engine/player_movement.c \
-	   src/init_data.c \
+	   src/parsing/init_data.c \
 	   src/debug/debug_utils.c \
 	   src/debug/print_data.c \
 	   src/libft/ft_atoi.c \
