@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:38:47 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:26:58 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/17 17:32:41 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int	key_press(int keycode, t_data *data)
 		close_game(data);
 	if (data->state == MENU)
 		handle_menu_keys(keycode, data);
-	else if (data->state == GAME && keycode >= 0 && keycode < 256)
+	else if (data->state == GAME && keycode >= 0 && keycode < 70000)
 		data->keys[keycode] = 1;
 	return (0);
 }
 
 int	key_release(int keycode, t_data *data)
 {
-	if (data->state == GAME && keycode >= 0 && keycode < 256)
+	if (data->state == GAME && keycode >= 0 && keycode < 70000)
 		data->keys[keycode] = 0;
 	return (0);
 }
