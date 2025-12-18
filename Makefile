@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+         #
+#    By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/16 15:38:12 by ramahrez         ###   ########.fr        #
+#    Updated: 2025/12/17 23:10:42 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ SRCS = src/main.c \
 	   $(MOUSE_SRC) \
 	   src/engine/key_handler.c \
 	   src/engine/render.c \
+	   src/engine/minimap/minimap.c \
+	   src/engine/minimap/minimap_utils.c \
 	   src/engine/raycasting/raycasting.c \
 	   src/engine/raycasting/ray_init.c \
 	   src/engine/raycasting/ray_dda.c \

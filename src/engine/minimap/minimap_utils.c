@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 00:30:51 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/17 22:56:00 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/17 23:11:13 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "minimap.h"
 #include "game.h"
 #include "mlx.h"
+#include "parsing.h"
 
 static void	draw_minimap_pixel_square(t_data *data, int scr_x, int scr_y, int color)
 {

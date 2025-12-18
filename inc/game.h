@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 22:57:15 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/17 23:10:18 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	update_player_movement(t_data *data);
 /*-----minimap.c-----*/
 
 void render_minimap(t_data *data);
-
+void draw_minimap_content(t_data *data);
 
 /*-----cleanup_macos.c / cleanup_linux.c-----*/
 
