@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extract_config.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/17 15:57:34 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:49:13 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,29 @@ static int	extract_texture(char *texture, t_data *data)
 	{
 		data->texture.north.path = ft_strtrim(texture + 2 + skip_isspace(texture
 					+ 2), "\n");
-		load_texture(&data->texture.north, data->mlx);
+		if (load_texture(&data->texture.north, data->mlx))
+			return (1);
 	}
 	if (!ft_strncmp(texture, "SO", 2))
 	{
 		data->texture.south.path = ft_strtrim(texture + 2 + skip_isspace(texture
 					+ 2), "\n");
-		load_texture(&data->texture.south, data->mlx);
+		if (load_texture(&data->texture.south, data->mlx))
+			return (1);
 	}
 	if (!ft_strncmp(texture, "WE", 2))
 	{
 		data->texture.west.path = ft_strtrim(texture + 2 + skip_isspace(texture
 					+ 2), "\n");
-		load_texture(&data->texture.west, data->mlx);
+		if (load_texture(&data->texture.west, data->mlx))
+			return (1);
 	}
 	if (!ft_strncmp(texture, "EA", 2))
 	{
 		data->texture.east.path = ft_strtrim(texture + 2 + skip_isspace(texture
 					+ 2), "\n");
-		load_texture(&data->texture.east, data->mlx);
+		if (load_texture(&data->texture.east, data->mlx))
+			return (1);
 	}
 	return (0);
 }
@@ -79,7 +83,10 @@ static int	extract_element(char **file_content, t_data *data)
 		if (ft_strchr("CF", file_content[i][skip]))
 		{
 			if (extract_color(file_content[i] + skip, data))
+			{
+				print_error("Error: invalid color");
 				return (1);
+			}
 		}
 		i++;
 	}
@@ -105,7 +112,7 @@ int	extract_config(char **file_content, t_data *data)
 {
 	if (extract_element(file_content, data))
 		return (1);
-	if (extract_map(file_content, data))
+	if (extract_map_data(file_content, data))
 		return (1);
 	extract_data_player(data->map, &data->player);
 	if (load_menu(data))

@@ -6,76 +6,42 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:43:01 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/16 15:37:47 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/18 12:02:09 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
-static void	setup_direction_two(char direction, t_player *player)
+static void	get_map_height(char **map, int *height)
 {
-	if (direction == 'E')
-	{
-		player->dir_x = 1;
-		player->dir_y = 0;
-		player->plane_x = 0;
-		player->plane_y = 0.66;
-	}
-	if (direction == 'W')
-	{
-		player->dir_x = -1;
-		player->dir_y = 0;
-		player->plane_x = 0;
-		player->plane_y = -0.66;
-	}
+	*height = 0;
+	if (!map)
+		return ;
+	while (map[*height])
+		*height += 1;
 }
 
-static void	setup_diection(char direction, t_player *player)
+static void	get_map_width(char **map, int *width)
 {
-	if (direction == 'N')
-	{
-		player->dir_x = 0;
-		player->dir_y = -1;
-		player->plane_x = 0.66;
-		player->plane_y = 0;
-	}
-	if (direction == 'S')
-	{
-		player->dir_x = 0;
-		player->dir_y = 1;
-		player->plane_x = -0.66;
-		player->plane_y = 0;
-	}
-	setup_direction_two(direction, player);
-}
-
-static void	setup_player(int x, int y, char direction, t_player *player)
-{
-	player->x = x + 0.5;
-	player->y = y + 0.5;
-	setup_diection(direction, player);
-}
-
-void	extract_data_player(char **map, t_player *player)
-{
+	int	current_width;
 	int	i;
-	int	j;
 
 	i = 0;
+	if (!map)
+	{
+		*width = 0;
+		return ;
+	}
 	while (map[i])
 	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (ft_strchr("NSEW", map[i][j]))
-				setup_player(j, i, map[i][j], player);
-			j++;
-		}
+		current_width = ft_strlen(map[i]);
+		if (current_width > *width)
+			*width = current_width;
 		i++;
 	}
 }
 
-int	extract_map(char **file_content, t_data *data)
+int	get_map(char **file_content, t_data *data)
 {
 	int	i;
 
@@ -89,5 +55,14 @@ int	extract_map(char **file_content, t_data *data)
 		}
 		i++;
 	}
+	return (0);
+}
+
+int	extract_map_data(char **file_content, t_data *data)
+{
+	if (get_map(file_content, data))
+		return (1);
+	get_map_height((data->map), &data->minimap.map_height);
+	get_map_width((data->map), &data->minimap.map_width);
 	return (0);
 }

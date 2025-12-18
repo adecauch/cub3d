@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+         #
+#    By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/17 23:10:42 by ramahrez         ###   ########.fr        #
+#    Updated: 2025/12/18 11:52:20 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ SRCS = src/main.c \
 	   src/parsing/extract_color.c \
 	   src/parsing/extract_config.c \
 	   src/parsing/extract_map_data.c \
+	   src/parsing/extract_player_data.c \
 	   src/parsing/parsing.c \
 	   src/parsing/read_file.c \
 	   src/parsing/string_utils.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/17 14:41:40 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/18 14:27:20 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int	ft_read_file(int fd, char ***file_content)
 	while (1)
 	{
 		str = get_next_line(fd);
+		if(str)
+			str = ft_strtrim(str, "\n");
 		if (str == NULL)
 			break ;
 		ret = add_line_to_content(file_content, str, &size);

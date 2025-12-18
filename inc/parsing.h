@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:09:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/17 14:54:55 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/18 11:58:39 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int		extract_color(char *color, t_data *data);
 
 /*-----extract_map_data.c-----*/
 
-int		extract_map(char **file_content, t_data *data);
+int extract_map_data(char **file_content, t_data *data);
+
 
 /*-----verif_map.c-----*/
 
