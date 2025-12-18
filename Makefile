@@ -6,7 +6,7 @@
 #    By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/18 11:52:20 by ramahrez         ###   ########.fr        #
+#    Updated: 2025/12/18 19:02:55 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RESET = \033[0m
 
 NAME = Cube3D
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 UNAME_S = $(shell uname -s)
 
 ifeq ($(UNAME_S),Darwin)

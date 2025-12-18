@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 16:20:00 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/18 15:56:39 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/18 19:13:17 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	free_file_content(char **file_content)
 	i = 0;
 	while (file_content[i])
 	{
-		free(file_content[i]);
+		if(file_content[i])
+			free(file_content[i]);
 		i++;
 	}
 	free(file_content);

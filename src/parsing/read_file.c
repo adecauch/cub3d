@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/18 14:27:20 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/18 19:10:00 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static void	clean_and_error(char ***content, int size, char *line, char *msg)
 		free((*content)[--i]);
 	free(*content);
 	free(line);
-	print_error(msg);
+	//print_error(msg);
+	(void)msg;
 }
 
 static int	add_line_to_content(char ***content, char *line, int *size)

@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 23:30:27 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/16 15:34:23 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/18 18:56:49 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_check_map(char **map)
 		j = -1;
 		while (map[i][++j])
 		{
-			if (!ft_strchr("01NSEW ", map[i][j]) && map[i][j] != '\n')
+			if (!ft_strchr("01NSEWD ", map[i][j]) && map[i][j] != '\n')
 				return (print_error("Error:Invalid char\n"), 1);
 			if (ft_strchr("NSEW", map[i][j]))
 				player++;

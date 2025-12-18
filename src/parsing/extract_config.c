@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/18 15:49:13 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/18 19:08:35 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	load_texture(t_img *texture, void *mlx)
 	if (!texture->img)
 	{
 		print_error("Error: load texture path:");
-		print_error(texture->path);
+		// print_error(texture->path);
 		return (1);
 	}
 	texture->addr = mlx_get_data_addr(texture->img, &texture->bpp,
