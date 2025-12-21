@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+         #
+#    By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/18 19:02:55 by ramahrez         ###   ########.fr        #
+#    Updated: 2025/12/21 12:43:28 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRCS = src/main.c \
 	   src/engine/raycasting/ray_render.c \
 	   src/engine/player_movement.c \
 	   src/parsing/init_data.c \
+	   src/parsing/verif_door.c \
 	   src/debug/debug_utils.c \
 	   src/debug/print_data.c \
 	   src/libft/ft_atoi.c \

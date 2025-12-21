@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extract_config.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/18 19:08:35 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/21 12:45:27 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static int	load_texture(t_img *texture, void *mlx)
 	if (!texture->img)
 	{
 		print_error("Error: load texture path:");
-		// print_error(texture->path);
 		return (1);
 	}
 	texture->addr = mlx_get_data_addr(texture->img, &texture->bpp,
@@ -115,7 +114,9 @@ int	extract_config(char **file_content, t_data *data)
 	if (extract_map_data(file_content, data))
 		return (1);
 	extract_data_player(data->map, &data->player);
-	if (load_menu(data))
+	if(verif_door(data->map))
 		return (1);
+	if (load_menu(data))
+		return(1);
 	return (0);
 }

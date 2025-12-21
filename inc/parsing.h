@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:09:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/18 11:58:39 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/21 12:41:35 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int extract_map_data(char **file_content, t_data *data);
 
 int		ft_check_map(char **map);
 void	extract_data_player(char **map, t_player *player);
+int verif_door(char **map);
 
 /*-----string_utils.c-----*/
 
@@ -82,5 +83,6 @@ char	*get_next_line(int fd);
 
 void	ft_print_tab(char **tab);
 void	ft_print_data(t_data data);
+
 
 #endif
