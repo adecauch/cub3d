@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:35:33 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 23:11:53 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/23 18:37:29 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,4 @@ void	raycasting(t_data *data)
 		draw_wall_column(data, &ray, x);
 		x++;
 	}
-	render_minimap(data);
-	mlx_put_image_to_window(data->mlx, data->win,
-		data->render_img.img, 0, 0);
 }
