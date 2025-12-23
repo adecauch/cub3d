@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/17 23:14:11 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/23 23:38:09 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ static void	init_texture_menu(t_texture *texture)
 	texture->menu_start.path = ft_strdup("data/texture/menu_start.xpm");
 }
 
-void init_minimap(t_minimap *mm)
+void	init_minimap(t_minimap *mm)
 {
-    mm->radius = 100;
-    mm->size = 8;
-    mm->center_x = 10 + mm->radius;
-    mm->center_y = 10 + mm->radius;
-    mm->color_wall = 0x000000;
-    mm->color_floor = 0x555555;
-    mm->color_player = 0xFF0000;
-    mm->margin = 10;
+	mm->radius = 100;
+	mm->size = 8;
+	mm->center_x = 10 + mm->radius;
+	mm->center_y = 10 + mm->radius;
+	mm->color_wall = 0x000000;
+	mm->color_floor = 0x555555;
+	mm->color_player = 0xFF0000;
+	mm->margin = 10;
 	mm->map_height = 0;
-	mm->map_width = 0;	
+	mm->map_width = 0;
 }
 
 void	init_data(t_data *data)

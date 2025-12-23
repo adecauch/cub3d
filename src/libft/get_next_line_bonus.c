@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:56:38 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/16 16:05:42 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:19:44 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "parsing.h"
-#include "struct/get_next_line_struct.h"
+#include "struct/get_next_line.h"
 
 void	ft_strlcpy(char *src, char *dest, int l)
 {

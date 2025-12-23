@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_struct.h                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:10:24 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/16 16:10:40 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:18:31 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_STRUCT_H
-# define GET_NEXT_LINE_STRUCT_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 typedef struct s_vars
 {

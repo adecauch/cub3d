@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/18 19:10:00 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/23 23:46:22 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static void	clean_and_error(char ***content, int size, char *line, char *msg)
 		free((*content)[--i]);
 	free(*content);
 	free(line);
-	//print_error(msg);
 	(void)msg;
 }
 
@@ -80,7 +79,7 @@ int	ft_read_file(int fd, char ***file_content)
 	while (1)
 	{
 		str = get_next_line(fd);
-		if(str)
+		if (str)
 			str = ft_strtrim(str, "\n");
 		if (str == NULL)
 			break ;

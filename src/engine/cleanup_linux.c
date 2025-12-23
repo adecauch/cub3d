@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cleanup_linux.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 16:20:00 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/18 19:13:17 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/23 23:19:23 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	free_file_content(char **file_content)
 	i = 0;
 	while (file_content[i])
 	{
-		if(file_content[i])
+		if (file_content[i])
 			free(file_content[i]);
 		i++;
 	}
