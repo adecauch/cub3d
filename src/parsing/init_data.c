@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/16 15:34:34 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/24 19:47:15 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ static void	init_player(t_player *player)
 	player->damage = 10;
 }
 
-static void	init_texture_menu(t_texture *texture)
+static void	init_bonus_texture(t_texture *texture)
 {
 	texture->menu_exit.path = ft_strdup("data/texture/menu_exit.xpm");
 	texture->menu_start.path = ft_strdup("data/texture/menu_start.xpm");
+	texture->door_open.path = ft_strdup("data/texture/door_open.xpm");
+	texture->door_closed.path = ft_strdup("data/texture/door_closed.xpm");
 }
 
 void	init_data(t_data *data)
@@ -37,5 +39,5 @@ void	init_data(t_data *data)
 	data->map = NULL;
 	init_player(&data->player);
 	data->mlx = mlx_init();
-	init_texture_menu(&data->texture);
+	init_bonus_texture(&data->texture);
 }

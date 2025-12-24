@@ -6,13 +6,31 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:36:06 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 16:02:04 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/23 19:56:17 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include "parsing.h"
 #include "data.h"
+#include <stdlib.h>
+
+static char	**create_test_map_with_door(void)
+{
+	char	**map;
+
+	map = malloc(sizeof(char *) * 8);
+	map[0] = ft_strdup("1111111");
+	map[1] = ft_strdup("1000001");
+	map[2] = ft_strdup("1000001");
+	map[3] = ft_strdup("111D111");
+	map[4] = ft_strdup("1000001");
+	map[5] = ft_strdup("100N001");
+	map[6] = ft_strdup("1111111");
+	map[7] = NULL;
+	return (map);
+}
+
 
 int	main(int argc, char **argv)
 {
@@ -31,5 +49,7 @@ int	main(int argc, char **argv)
 		close_game(&data);
 		return (1);
 	}
+	data.map = create_test_map_with_door();
+	extract_data_player(data.map, &data.player);
 	return (game(&data));
 }
