@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:30:00 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:27:09 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/25 23:42:12 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	can_move_to(t_data *data, double new_x, double new_y)
 		return (0);
 	if (!data->map[map_y] || !data->map[map_y][map_x])
 		return (0);
-	if (data->map[map_y][map_x] == '1')
+	if (data->map[map_y][map_x] == '1' || data->map[map_y][map_x] == 'D')
 		return (0);
 	return (1);
 }
