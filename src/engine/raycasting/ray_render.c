@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:37:48 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/15 13:38:35 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/26 00:00:19 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ int	get_texture_pixel(t_img *texture, int x, int y)
 
 t_img	*get_wall_texture(t_ray *ray, t_data *data)
 {
+	char	door;
+
+	door = data->map[ray->map_y][ray->map_x];
+	if (door == 'D')
+		return (&data->texture.door_closed);
+	if (door == 'd')
+		return (&data->texture.door_open);
 	if (ray->side == 0)
 	{
 		if (ray->ray_dir_x > 0)

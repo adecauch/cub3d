@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:49:58 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/26 00:21:36 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ void	rotate_player(t_player *player, double rotation_speed);
 void	move_player(t_data *data, double direction);
 void	strafe_player(t_data *data, double direction);
 void	update_player_movement(t_data *data);
+
+/*-----door.c-----*/
+
+void	toggle_door(t_data *data);
 
 /*-----cleanup_macos.c / cleanup_linux.c-----*/
 

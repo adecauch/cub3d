@@ -30,7 +30,8 @@ void	perform_dda(t_ray *ray, t_data *data)
 			ray->side = 1;
 		}
 		if (data->map[ray->map_y][ray->map_x] == '1' ||
-			data->map[ray->map_y][ray->map_x] == 'D')
+			data->map[ray->map_y][ray->map_x] == 'D' ||
+			data->map[ray->map_y][ray->map_x] == 'd')
 			ray->hit = 1;
 	}
 }
