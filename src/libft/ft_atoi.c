@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 23:01:13 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/18 15:17:54 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/23 15:00:54 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		n;
+	int			i;
+	int			n;
 	long long	result;
 
 	i = 0;
@@ -35,7 +35,7 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	result *= n;
-	if(result < 0 || result > 255)
-		return -1;
+	if (result < 0 || result > 255)
+		return (-1);
 	return (result * n);
 }

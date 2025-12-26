@@ -135,7 +135,7 @@ int	mlx_destroy_image(void *mlx_ptr, void *img_ptr);
 */
 
 int	mlx_hook(void *win_ptr, int x_event, int x_mask,
-                 int (*funct)(), void *param);
+	 int (*funct)(), void *param);
 
 int     mlx_mouse_hide();
 int     mlx_mouse_show();

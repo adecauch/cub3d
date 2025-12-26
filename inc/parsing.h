@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:09:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/21 12:41:35 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:13:03 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,13 @@ int		extract_color(char *color, t_data *data);
 
 /*-----extract_map_data.c-----*/
 
-int extract_map_data(char **file_content, t_data *data);
-
+int		extract_map_data(char **file_content, t_data *data);
 
 /*-----verif_map.c-----*/
 
 int		ft_check_map(char **map);
 void	extract_data_player(char **map, t_player *player);
-int verif_door(char **map);
+int		verif_door(char **map);
 
 /*-----string_utils.c-----*/
 
@@ -84,5 +83,9 @@ char	*get_next_line(int fd);
 void	ft_print_tab(char **tab);
 void	ft_print_data(t_data data);
 
+/*-----------extract_config_utils.c---------*/
+
+int		extract_texture(char *texture, t_data *data);
+int		load_menu(t_data *data);
 
 #endif
