@@ -6,13 +6,14 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:36:06 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 16:02:04 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/26 16:13:20 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include "parsing.h"
 #include "data.h"
+#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
@@ -31,5 +32,6 @@ int	main(int argc, char **argv)
 		close_game(&data);
 		return (1);
 	}
+	extract_data_player(data.map, &data.player);
 	return (game(&data));
 }

@@ -13,7 +13,7 @@
 #include "mlx.h"
 #include "parsing.h"
 
-static int	load_texture(t_img *texture, void *mlx)
+int	load_texture(t_img *texture, void *mlx)
 {
 	texture->img = mlx_xpm_file_to_image(mlx, texture->path, &texture->width,
 			&texture->height);

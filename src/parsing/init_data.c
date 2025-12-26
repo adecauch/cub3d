@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/23 23:38:09 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:06:28 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ static void	init_player(t_player *player)
 	player->damage = 10;
 }
 
-static void	init_texture_menu(t_texture *texture)
+static void	init_bonus_texture(t_texture *texture)
 {
 	texture->menu_exit.path = ft_strdup("data/texture/menu_exit.xpm");
 	texture->menu_start.path = ft_strdup("data/texture/menu_start.xpm");
+	texture->door.path = ft_strdup("data/texture/door.xpm");
 }
 
 void	init_minimap(t_minimap *mm)
@@ -52,5 +53,5 @@ void	init_data(t_data *data)
 	init_player(&data->player);
 	data->mlx = mlx_init();
 	init_minimap(&data->minimap);
-	init_texture_menu(&data->texture);
+	init_bonus_texture(&data->texture);
 }

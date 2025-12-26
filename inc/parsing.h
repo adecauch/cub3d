@@ -85,6 +85,7 @@ void	ft_print_data(t_data data);
 
 /*-----------extract_config_utils.c---------*/
 
+int		load_texture(t_img *texture, void *mlx);
 int		extract_texture(char *texture, t_data *data);
 int		load_menu(t_data *data);
 

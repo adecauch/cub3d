@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/26 15:52:07 by adecauch         ###   ########.fr       */
+/*   Created: 2025/12/26 16:18:01 by adecauch          #+#    #+#             */
+/*   Updated: 2025/12/26 17:06:14 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,10 @@ void	update_player_movement(t_data *data);
 
 void	render_minimap(t_data *data);
 void	draw_minimap_content(t_data *data);
+
+/*-----door.c-----*/
+
+void	toggle_door(t_data *data);
 
 /*-----cleanup_macos.c / cleanup_linux.c-----*/
 

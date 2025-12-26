@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extract_config.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/24 00:01:36 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:06:14 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,26 @@ static int	extract_element(char **file_content, t_data *data)
 	return (0);
 }
 
+static int	load_bonus(t_data *data)
+{
+	if (load_texture(&data->texture.menu_exit, data->mlx))
+	{
+		print_error("Error: load texture path: data/texture/menu_exit.xpm");
+		return (1);
+	}
+	if (load_texture(&data->texture.menu_start, data->mlx))
+	{
+		print_error("Error: load texture path: data/texture/menu_start.xpm");
+		return (1);
+	}
+	if (load_texture(&data->texture.door, data->mlx))
+	{
+		print_error("Error: load texture path: data/texture/door.xpm");
+		return (1);
+	}
+	return (0);
+}
+
 int	extract_config(char **file_content, t_data *data)
 {
 	if (extract_element(file_content, data))
@@ -49,7 +69,7 @@ int	extract_config(char **file_content, t_data *data)
 	extract_data_player(data->map, &data->player);
 	if (verif_door(data->map))
 		return (1);
-	if (load_menu(data))
+	if (load_bonus(data))
 		return (1);
 	return (0);
 }

@@ -23,5 +23,6 @@
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 # define KEY_ENTER 65293
+# define KEY_E 101
 
 #endif
