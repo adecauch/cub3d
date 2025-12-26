@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/24 19:53:21 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/26 15:26:42 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,14 +98,9 @@ static int	load_bonus(t_data *data)
 		print_error("Error: load texture path: data/texture/menu_start.xpm");
 		return (1);
 	}
-	if (load_texture(&data->texture.door_open, data->mlx))
+	if (load_texture(&data->texture.door, data->mlx))
 	{
-		print_error("Error: load texture path: data/texture/door_open.xpm");
-		return (1);
-	}
-	if (load_texture(&data->texture.door_closed, data->mlx))
-	{
-		print_error("Error: load texture path: data/texture/door_closed.xpm");
+		print_error("Error: load texture path: data/texture/door.xpm");
 		return (1);
 	}
 	return (0);

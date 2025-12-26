@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:23:35 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/24 19:47:15 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/26 15:22:39 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ typedef struct s_texture
 	t_img	east;
 	t_img	menu_exit;
 	t_img	menu_start;
-	t_img	door_open;
-	t_img	door_closed;
+	t_img	door;
 	int		floor_color;
 	int		ceil_color;
 }			t_texture;

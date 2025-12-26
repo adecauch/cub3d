@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 15:39:50 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/25 23:37:36 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/26 15:32:48 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ void	perform_dda(t_ray *ray, t_data *data)
 			ray->side = 1;
 		}
 		if (data->map[ray->map_y][ray->map_x] == '1' ||
-			data->map[ray->map_y][ray->map_x] == 'D' ||
-			data->map[ray->map_y][ray->map_x] == 'd')
+			data->map[ray->map_y][ray->map_x] == 'D')
 			ray->hit = 1;
 	}
 }
