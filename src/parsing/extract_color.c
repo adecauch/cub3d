@@ -6,11 +6,12 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 12:23:10 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/16 15:30:58 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:19:16 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 static int	get_color_component(char **line_ptr, int *component_out)

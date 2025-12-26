@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:50:08 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/23 18:46:45 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	close_game(t_data *data)
 
 void	init_game(t_data *data)
 {
-	data->win = mlx_new_window(data->mlx, W_WIDTH, W_HEIGHT, "Cube3D");
+	data->win = mlx_new_window(data->mlx, W_WIDTH, W_HEIGHT, "Cub3D");
 	data->render_img.img = mlx_new_image(data->mlx, W_WIDTH, W_HEIGHT);
 	data->render_img.addr = mlx_get_data_addr(data->render_img.img,
 			&data->render_img.bpp, &data->render_img.line_len,

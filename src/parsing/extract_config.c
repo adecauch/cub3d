@@ -3,64 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   extract_config.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/17 15:57:34 by adecauch         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:01:36 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "parsing.h"
-
-static int	load_texture(t_img *texture, void *mlx)
-{
-	texture->img = mlx_xpm_file_to_image(mlx, texture->path, &texture->width,
-			&texture->height);
-	if (!texture->img)
-	{
-		print_error("Error: load texture path:");
-		print_error(texture->path);
-		return (1);
-	}
-	texture->addr = mlx_get_data_addr(texture->img, &texture->bpp,
-			&texture->line_len, &texture->endian);
-	if (!texture->addr)
-	{
-		print_error("Error: Could not retrieve texture pixel address.\n");
-		return (1);
-	}
-	return (0);
-}
-
-static int	extract_texture(char *texture, t_data *data)
-{
-	if (!ft_strncmp(texture, "NO", 2))
-	{
-		data->texture.north.path = ft_strtrim(texture + 2 + skip_isspace(texture
-					+ 2), "\n");
-		load_texture(&data->texture.north, data->mlx);
-	}
-	if (!ft_strncmp(texture, "SO", 2))
-	{
-		data->texture.south.path = ft_strtrim(texture + 2 + skip_isspace(texture
-					+ 2), "\n");
-		load_texture(&data->texture.south, data->mlx);
-	}
-	if (!ft_strncmp(texture, "WE", 2))
-	{
-		data->texture.west.path = ft_strtrim(texture + 2 + skip_isspace(texture
-					+ 2), "\n");
-		load_texture(&data->texture.west, data->mlx);
-	}
-	if (!ft_strncmp(texture, "EA", 2))
-	{
-		data->texture.east.path = ft_strtrim(texture + 2 + skip_isspace(texture
-					+ 2), "\n");
-		load_texture(&data->texture.east, data->mlx);
-	}
-	return (0);
-}
 
 static int	extract_element(char **file_content, t_data *data)
 {
@@ -79,24 +30,12 @@ static int	extract_element(char **file_content, t_data *data)
 		if (ft_strchr("CF", file_content[i][skip]))
 		{
 			if (extract_color(file_content[i] + skip, data))
+			{
+				print_error("Error: invalid color");
 				return (1);
+			}
 		}
 		i++;
-	}
-	return (0);
-}
-
-static int	load_menu(t_data *data)
-{
-	if (load_texture(&data->texture.menu_exit, data->mlx))
-	{
-		print_error("Error: load texture path: data/texture/menu_exit.xpm");
-		return (1);
-	}
-	if (load_texture(&data->texture.menu_start, data->mlx))
-	{
-		print_error("Error: load texture path: data/texture/menu_start.xpm");
-		return (1);
 	}
 	return (0);
 }
@@ -105,9 +44,11 @@ int	extract_config(char **file_content, t_data *data)
 {
 	if (extract_element(file_content, data))
 		return (1);
-	if (extract_map(file_content, data))
+	if (extract_map_data(file_content, data))
 		return (1);
 	extract_data_player(data->map, &data->player);
+	if (verif_door(data->map))
+		return (1);
 	if (load_menu(data))
 		return (1);
 	return (0);

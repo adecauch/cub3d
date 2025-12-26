@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+         #
+#    By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/16 15:38:12 by ramahrez         ###   ########.fr        #
+#    Updated: 2025/12/23 23:58:13 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RESET = \033[0m
 
 NAME = Cub3D
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 UNAME_S = $(shell uname -s)
 
 ifeq ($(UNAME_S),Darwin)
@@ -38,12 +38,15 @@ SRCS = src/main.c \
 	   $(MOUSE_SRC) \
 	   src/engine/key_handler.c \
 	   src/engine/render.c \
+	   src/engine/minimap/minimap.c \
+	   src/engine/minimap/minimap_utils.c \
 	   src/engine/raycasting/raycasting.c \
 	   src/engine/raycasting/ray_init.c \
 	   src/engine/raycasting/ray_dda.c \
 	   src/engine/raycasting/ray_render.c \
 	   src/engine/player_movement.c \
 	   src/parsing/init_data.c \
+	   src/parsing/verif_door.c \
 	   src/debug/debug_utils.c \
 	   src/debug/print_data.c \
 	   src/libft/ft_atoi.c \
@@ -63,7 +66,9 @@ SRCS = src/main.c \
 	   src/libft/ft_substr.c \
 	   src/parsing/extract_color.c \
 	   src/parsing/extract_config.c \
+	   src/parsing/extract_config_utils.c \
 	   src/parsing/extract_map_data.c \
+	   src/parsing/extract_player_data.c \
 	   src/parsing/parsing.c \
 	   src/parsing/read_file.c \
 	   src/parsing/string_utils.c \
