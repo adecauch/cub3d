@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/24 00:09:20 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/26 15:52:07 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@
 # include "keybind/key.h"
 # include "data.h"
 # include "struct/ray.h"
-
-
 
 /*-----key_handler.c-----*/
 
