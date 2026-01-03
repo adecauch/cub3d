@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:32:20 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/23 23:23:09 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 01:02:04 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	process_texture_line(char *line, int *check, int *count)
 	return (print_error("Error: Invalid line in file"), -1);
 }
 
-static int	verif_textures(char **files)
+int	verif_textures(char **files)
 {
 	int	i;
 	int	count;
@@ -83,12 +83,5 @@ static int	verif_textures(char **files)
 	}
 	if (count != 6)
 		return (print_error("Error: Missing textures\n"), 1);
-	return (ft_check_map(files + i));
-}
-
-int	verif_files(char **files)
-{
-	if (verif_textures(files))
-		return (1);
 	return (0);
 }

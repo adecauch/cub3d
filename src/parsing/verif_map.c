@@ -3,54 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   verif_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 23:30:27 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/18 18:56:49 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 14:57:53 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+#include "game.h"
 #include <stdio.h>
+#include "flood_fill.h"
 
-static int	is_closed(char **map, int x, int y)
+void	flood_fill(char **map_copy, int x, int y, t_check *info)
 {
-	if (x == 0 || map[y][x - 1] == ' ')
-		return (0);
-	if (map[y][x + 1] == '\0' || map[y][x + 1] == ' ')
-		return (0);
-	if (y == 0 || (int)ft_strlen(map[y - 1]) <= x || map[y - 1][x] == ' ')
-		return (0);
-	if (!map[y + 1] || (int)ft_strlen(map[y + 1]) <= x || map[y + 1][x] == ' ')
-		return (0);
-	return (1);
+	if (info->error == 1)
+		return ;
+	if (y < 0 || x < 0 || !map_copy[y])
+	{
+		info->error = 1;
+		return ;
+	}
+	if (map_copy[y][x] == '1' || map_copy[y][x] == 'V')
+		return ;
+	if (map_copy[y][x] == ' ' || map_copy[y][x] == '\t' ||
+			map_copy[y][x] == 0 || map_copy[y][x] == '\n')
+	{
+		info->error = 1;
+		return ;
+	}
+	if (map_copy[y][x] == 'C')
+		info->collectibles_found++;
+	map_copy[y][x] = 'V';
+	flood_fill(map_copy, x + 1, y, info);
+	flood_fill(map_copy, x - 1, y, info);
+	flood_fill(map_copy, x, y + 1, info);
+	flood_fill(map_copy, x, y - 1, info);
 }
 
-int	ft_check_map(char **map)
+int	ft_check_path_and_collectibles(char **map, t_data *data)
 {
-	int	i;
-	int	j;
-	int	player;
+	char	**map_copy;
+	t_check	check_info;
 
-	i = -1;
-	player = 0;
-	while (map[++i])
-	{
-		j = -1;
-		while (map[i][++j])
-		{
-			if (!ft_strchr("01NSEWD ", map[i][j]) && map[i][j] != '\n')
-				return (print_error("Error:Invalid char\n"), 1);
-			if (ft_strchr("NSEW", map[i][j]))
-				player++;
-			if (ft_strchr("0NSEW", map[i][j]))
-			{
-				if (!is_closed(map, j, i))
-					return (print_error("Error:Map not closed"), 1);
-			}
-		}
-	}
-	if (player != 1)
-		return (print_error("Error\nWrong player count\n"), 1);
+	check_info.collectibles_found = 0;
+	check_info.error = 0;
+	map_copy = ft_tabdup(map);
+	if (!map_copy)
+		return (print_error("Malloc error"), 1);
+	flood_fill(map_copy, data->player.x, data->player.y, &check_info);
+	free_file_content(map_copy);
+	if (check_info.error == 1)
+		return (print_error("Error: Map not closed (hole found)"), 1);
+	if (check_info.collectibles_found != data->total_collectibles)
+		return (print_error("Error: Unreachable collectible"), 1);
 	return (0);
 }

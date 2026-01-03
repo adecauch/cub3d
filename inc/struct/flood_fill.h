@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extract_collectible.c                              :+:      :+:    :+:   */
+/*   flood_fill.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/24 16:22:39 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/24 17:02:05 by ramahrez         ###   ########.fr       */
+/*   Created: 2026/01/03 14:56:57 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/01/03 14:59:34 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FLOOD_FILL_H
+# define FLOOD_FILL_H
 
-
-int extract_collectible(char **map)
+typedef struct s_check
 {
-	int	x;
-	int	y;
+	int	collectibles_found;
+	int	exit_found;
+	int	error;
+}	t_check;
 
-	y = 0;
-	while(map[y])
-	{
-		x = 0;
-		while(map[y][x])
-		{
-			if(map[y][x] == 'C')
-			{
-                
-			}
-		}
-	}
-}
+#endif

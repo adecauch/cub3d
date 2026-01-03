@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/24 00:09:20 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 01:41:15 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@
 # include "keybind/key.h"
 # include "data.h"
 # include "struct/ray.h"
-
-
 
 /*-----key_handler.c-----*/
 

@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/23 23:38:09 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 01:35:55 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	init_data(t_data *data)
 	data->map = NULL;
 	init_player(&data->player);
 	data->mlx = mlx_init();
+	data->total_collectibles = 0;
 	init_minimap(&data->minimap);
 	init_texture_menu(&data->texture);
 }

@@ -6,7 +6,7 @@
 #    By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2025/12/23 23:58:13 by ramahrez         ###   ########.fr        #
+#    Updated: 2026/01/03 00:21:33 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ SRCS = src/main.c \
 	   src/libft/print_error.c \
 	   src/libft/ft_strtrim.c \
 	   src/libft/ft_substr.c \
+	   src/libft/ft_tabdup.c \
 	   src/parsing/extract_color.c \
 	   src/parsing/extract_config.c \
 	   src/parsing/extract_config_utils.c \

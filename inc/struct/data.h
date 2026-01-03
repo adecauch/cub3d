@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:15:05 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/24 00:19:23 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 01:40:57 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_data
 	t_menu		menu;
 	void		*mlx;
 	void		*win;
+	int			total_collectibles;
 }	t_data;
 
 #endif

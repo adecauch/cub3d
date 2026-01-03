@@ -3,14 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   extract_map_data.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:43:01 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/18 12:02:09 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 01:24:37 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+
+static void	count_collectibles(char **map, int *total_collectibles)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (map[y][x] == 'C')
+				*total_collectibles += 1;
+			x++;
+		}
+		y++;
+	}
+}
 
 static void	get_map_height(char **map, int *height)
 {
@@ -64,5 +83,6 @@ int	extract_map_data(char **file_content, t_data *data)
 		return (1);
 	get_map_height((data->map), &data->minimap.map_height);
 	get_map_width((data->map), &data->minimap.map_width);
+	count_collectibles(data->map, &data->total_collectibles);
 	return (0);
 }

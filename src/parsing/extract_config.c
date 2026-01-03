@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/24 00:01:36 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 01:36:31 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	extract_config(char **file_content, t_data *data)
 		return (1);
 	extract_data_player(data->map, &data->player);
 	if (verif_door(data->map))
+		return (1);
+	if (ft_check_path_and_collectibles(data->map, data))
 		return (1);
 	if (load_menu(data))
 		return (1);
