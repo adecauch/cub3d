@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:18:20 by adecauch          #+#    #+#             */
-/*   Updated: 2026/01/03 01:41:15 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:58:24 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,9 @@ void	draw_minimap_content(t_data *data);
 
 void	cleanup_data(t_data *data);
 void	free_file_content(char **file_content);
+
+/*----------collectible.c--------------------*/
+
+void	verif_collectible(t_data *data);
 
 #endif

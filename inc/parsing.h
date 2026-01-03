@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:09:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/01/03 01:41:56 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:40:14 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	ft_putstr(char *str);
 void	print_error(char *str);
 char	*get_next_line(int fd);
 char	**ft_tabdup(char **grid);
+char	*ft_itoa(int nb);
 /*-----debug-----*/
 
 void	ft_print_tab(char **tab);

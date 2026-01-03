@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:40:50 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/16 16:10:49 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:18:14 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_player
 	double	plane_y;
 	double	speed;
 	double	health;
+	int		collected;
 	int		damage;
 }			t_player;
 

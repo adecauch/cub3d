@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:50:08 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/01/03 16:00:52 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	game_loop(t_data *data)
 	{
 		update_player_movement(data);
 		render_game(data);
+		verif_collectible(data);
 	}
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 00:30:51 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/18 12:25:24 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:59:12 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static void	draw_minimap_tile(t_data *data, int tile[2], int scr_x, int scr_y)
 			color = data->minimap.color_wall;
 		else if (content == '0' || ft_strchr("NSWE", content))
 			color = data->minimap.color_floor;
+		else if (content == 'C')
+			color = data->minimap.color_collectible;
 		else
 			color = data->minimap.color_wall;
 	}
