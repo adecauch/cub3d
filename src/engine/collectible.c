@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 15:08:03 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/01/03 16:00:18 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:37:27 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,7 @@ void	verif_collectible(t_data *data)
 		data->player.collected++;
 		data->map[y][x] = '0';
 	}
+	if (data->map[y][x] == 'T'
+		&& (data->total_collectibles == data->player.collected))
+		close_game(data);
 }

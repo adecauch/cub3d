@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2026/01/03 16:01:44 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:44:41 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	init_minimap(t_minimap *mm)
 	mm->color_floor = 0x555555;
 	mm->color_player = 0xFF0000;
 	mm->color_collectible = 0xffde21;
-	mm->margin = 10;
+	mm->color_exit = 0x0000ff;
 	mm->map_height = 0;
 	mm->map_width = 0;
 }

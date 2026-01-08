@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 00:30:51 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/01/03 15:59:12 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:34:25 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ static void	draw_minimap_tile(t_data *data, int tile[2], int scr_x, int scr_y)
 			color = data->minimap.color_floor;
 		else if (content == 'C')
 			color = data->minimap.color_collectible;
+		else if (content == 'T'
+			&& (data->total_collectibles == data->player.collected))
+			color = data->minimap.color_exit;
 		else
 			color = data->minimap.color_wall;
 	}
