@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 16:20:00 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 16:54:47 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/01 22:46:35 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static void	destroy_image(void *mlx, t_img *img)
 
 static void	free_texture_paths(t_texture *texture)
 {
+	int	i;
+
 	if (texture->north.path)
 		free(texture->north.path);
 	if (texture->south.path)
@@ -50,20 +52,50 @@ static void	free_texture_paths(t_texture *texture)
 		free(texture->menu_start.path);
 	if (texture->menu_exit.path)
 		free(texture->menu_exit.path);
+	i = -1;
+	while (++i < WIN_FRAMES)
+		if (texture->win[i].path)
+			free(texture->win[i].path);
+}
+
+static void	cleanup_sprites(t_data *data)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < data->sprites.count)
+	{
+		j = 0;
+		while (j < data->sprites.arr[i].frame_count)
+			destroy_image(data->mlx, &data->sprites.arr[i].frames[j++]);
+		i++;
+	}
+	free(data->sprites.arr);
+	free(data->sprites.z_buffer);
+	free(data->sprites.order);
+	free(data->sprites.dist);
 }
 
 void	cleanup_data(t_data *data)
 {
+	int	i;
+
 	if (!data)
 		return ;
 	if (data->mlx)
 	{
+		if (data->sprites.count > 0)
+			cleanup_sprites(data);
 		destroy_image(data->mlx, &data->texture.north);
 		destroy_image(data->mlx, &data->texture.south);
 		destroy_image(data->mlx, &data->texture.east);
 		destroy_image(data->mlx, &data->texture.west);
 		destroy_image(data->mlx, &data->texture.menu_start);
 		destroy_image(data->mlx, &data->texture.menu_exit);
+		i = -1;
+		while (++i < WIN_FRAMES)
+			destroy_image(data->mlx, &data->texture.win[i]);
 		destroy_image(data->mlx, &data->render_img);
 		if (data->win)
 			mlx_destroy_window(data->mlx, data->win);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:15:05 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/24 00:19:23 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/01 22:42:17 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 # include "player.h"
 # include "texture.h"
 # include "minimap.h"
+# include "sprite.h"
 
 typedef struct s_data
 {
+	t_sprites	sprites;
 	t_minimap	minimap;
 	t_texture	texture;
 	t_img		render_img;

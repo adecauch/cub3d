@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:36:06 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/26 16:13:20 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:47:05 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,29 @@
 #include "parsing.h"
 #include "data.h"
 #include <stdlib.h>
+
+static void	set_test_map(t_data *data)
+{
+	char	**map;
+
+	map = malloc(sizeof(char *) * 13);
+	map[0] = ft_strdup("1111111111111");
+	map[1] = ft_strdup("1C0000C000001");
+	map[2] = ft_strdup("1000000000001");
+	map[3] = ft_strdup("1001110001001");
+	map[4] = ft_strdup("10C1010001001");
+	map[5] = ft_strdup("10010D0001001");
+	map[6] = ft_strdup("1001C100C1001");
+	map[7] = ft_strdup("1001110001001");
+	map[8] = ft_strdup("1000000000001");
+	map[9] = ft_strdup("100N0000C0X01");
+	map[10] = ft_strdup("1000000000001");
+	map[11] = ft_strdup("1111111111111");
+	map[12] = NULL;
+	data->map = map;
+	data->minimap.map_height = 12;
+	data->minimap.map_width = 13;
+}
 
 int	main(int argc, char **argv)
 {
@@ -32,6 +55,12 @@ int	main(int argc, char **argv)
 		close_game(&data);
 		return (1);
 	}
+	set_test_map(&data);
 	extract_data_player(data.map, &data.player);
+	if (init_sprites_from_map(&data))
+	{
+		close_game(&data);
+		return (print_error("Error: sprite init failed"), 1);
+	}
 	return (game(&data));
 }

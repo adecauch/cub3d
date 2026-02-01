@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verif_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 23:30:27 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/18 18:56:49 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/01 22:48:08 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	ft_check_map(char **map)
 		j = -1;
 		while (map[i][++j])
 		{
-			if (!ft_strchr("01NSEWD ", map[i][j]) && map[i][j] != '\n')
+			if (!ft_strchr("01NSEWDCX ", map[i][j]) && map[i][j] != '\n')
 				return (print_error("Error:Invalid char\n"), 1);
 			if (ft_strchr("NSEW", map[i][j]))
 				player++;
-			if (ft_strchr("0NSEW", map[i][j]))
+			if (ft_strchr("0NSEWCX", map[i][j]))
 			{
 				if (!is_closed(map, j, i))
 					return (print_error("Error:Map not closed"), 1);

@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 14:19:17 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/13 14:20:32 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/01 22:42:32 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 typedef enum e_state
 {
 	GAME,
-	MENU
+	MENU,
+	WIN
 }	t_state;
 
 typedef enum e_menu

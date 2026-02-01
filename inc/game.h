@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:18:01 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/26 17:06:14 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/01 22:43:36 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		mouse_move(int x, int y, t_data *data);
 
 void	render_menu(t_data *data);
 void	render_game(t_data *data);
+void	render_win(t_data *data);
 
 /*-----raycasting/ray_init.c-----*/
 
@@ -79,6 +80,34 @@ void	draw_minimap_content(t_data *data);
 /*-----door.c-----*/
 
 void	toggle_door(t_data *data);
+
+/*-----sprite/sprite_init.c-----*/
+
+int		init_sprites_from_map(t_data *data);
+
+/*-----sprite/sprite_utils.c-----*/
+
+void	sort_sprites(t_data *data);
+void	project_sprite(t_data *data, t_sprite *sp, t_sprite_proj *p);
+
+/*-----sprite/sprite_render.c-----*/
+
+void	render_sprites(t_data *data);
+
+/*-----sprite/sprite_anim.c-----*/
+
+void	update_sprite_anim(t_data *data);
+t_img	*get_sprite_frame(t_data *data, t_sprite *sprite);
+
+/*-----sprite/placeholder_tex.c-----*/
+
+int		generate_collect_frames(t_data *data, t_sprite *sprite);
+int		generate_exit_frames(t_data *data, t_sprite *sprite);
+
+/*-----collectible.c-----*/
+
+void	check_collectible_pickup(t_data *data);
+void	check_exit_condition(t_data *data);
 
 /*-----cleanup_macos.c / cleanup_linux.c-----*/
 

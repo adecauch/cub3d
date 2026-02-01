@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/26 17:06:28 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/01 22:48:03 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ static void	init_bonus_texture(t_texture *texture)
 	texture->menu_exit.path = ft_strdup("data/texture/menu_exit.xpm");
 	texture->menu_start.path = ft_strdup("data/texture/menu_start.xpm");
 	texture->door.path = ft_strdup("data/texture/door.xpm");
+	texture->win[0].path = ft_strdup("data/texture/win_1.xpm");
+	texture->win[1].path = ft_strdup("data/texture/win_2.xpm");
+	texture->win[2].path = ft_strdup("data/texture/win_3.xpm");
+	texture->win[3].path = ft_strdup("data/texture/win_4.xpm");
+	texture->win_tick = 0;
 }
 
 void	init_minimap(t_minimap *mm)

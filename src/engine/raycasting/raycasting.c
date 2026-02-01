@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:35:33 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/23 18:37:29 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/01 22:45:15 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	raycasting(t_data *data)
 		if (ray.draw_end >= W_HEIGHT)
 			ray.draw_end = W_HEIGHT - 1;
 		draw_wall_column(data, &ray, x);
+		data->sprites.z_buffer[x] = ray.perp_wall_dist;
 		x++;
 	}
 }
