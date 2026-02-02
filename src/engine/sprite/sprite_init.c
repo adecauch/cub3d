@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:46:08 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:46:10 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:01:21 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	init_sprites_from_map(t_data *data)
 
 	total = count_sprites(data->map, &n_collect, &n_exit);
 	data->sprites.count = total;
-	data->sprites.total_collect = n_collect;
+	data->total_collectibles = n_collect;
 	data->sprites.collected = 0;
 	data->sprites.anim_tick = 0;
 	if (total == 0)

@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 00:30:51 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/01 22:44:51 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:00:15 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	draw_minimap_tile(t_data *data, int tile[2], int scr_x, int scr_y)
 		else if (content == 'C')
 			color = data->minimap.color_floor;
 		else if (content == 'X' && data->sprites.collected
-			>= data->sprites.total_collect)
+			>= data->total_collectibles)
 			color = 0x00FF00;
 		else if (content == 'X')
 			color = 0xFF0000;

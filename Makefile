@@ -6,7 +6,7 @@
 #    By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2026/02/01 22:43:50 by adecauch         ###   ########.fr        #
+#    Updated: 2026/02/02 16:07:42 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,10 @@ SRCS = src/main.c \
 	   src/engine/sprite/sprite_anim.c \
 	   src/engine/sprite/sprite_utils.c \
 	   src/engine/sprite/placeholder_tex.c \
+	   src/engine/slenderman/slender_init.c \
+	   src/engine/slenderman/slender_move.c \
+	   src/engine/slenderman/slender_anim.c \
+	   src/engine/slenderman/slender_render.c \
 	   src/parsing/init_data.c \
 	   src/parsing/verif_door.c \
 	   src/debug/debug_utils.c \

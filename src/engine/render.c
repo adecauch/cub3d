@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:35:56 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:47:12 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:02:22 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,21 @@ void	render_game(t_data *data)
 {
 	raycasting(data);
 	render_sprites(data);
+	render_slenderman(data);
 	render_minimap(data);
 	mlx_put_image_to_window(data->mlx, data->win,
 		data->render_img.img, 0, 0);
+}
+
+void	render_gameover(t_data *data)
+{
+	int	frame;
+
+	data->texture.gameover_tick++;
+	frame = (data->texture.gameover_tick / GAMEOVER_ANIM_SPEED)
+		% GAMEOVER_FRAMES;
+	mlx_put_image_to_window(data->mlx, data->win,
+		data->texture.gameover[frame].img, 0, 0);
 }
 
 void	render_win(t_data *data)

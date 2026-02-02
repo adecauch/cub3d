@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:43:00 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:43:22 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 15:59:44 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ typedef struct s_sprites
 {
 	t_sprite	*arr;
 	int			count;
-	int			total_collect;
 	int			collected;
 	int			anim_tick;
 	double		*z_buffer;

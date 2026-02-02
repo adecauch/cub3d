@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:45:48 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:45:50 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:01:17 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_img	*get_sprite_frame(t_data *data, t_sprite *sprite)
 {
 	if (sprite->type == SPRITE_EXIT)
 	{
-		if (data->sprites.collected >= data->sprites.total_collect)
+		if (data->sprites.collected >= data->total_collectibles)
 			return (&sprite->frames[1]);
 		return (&sprite->frames[0]);
 	}

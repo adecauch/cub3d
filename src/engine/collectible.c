@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:46:44 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:46:46 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:02:14 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	check_exit_condition(t_data *data)
 	double	dx;
 	double	dy;
 
-	if (data->sprites.collected < data->sprites.total_collect)
+	if (data->sprites.collected < data->total_collectibles)
 		return ;
 	i = 0;
 	while (i < data->sprites.count)

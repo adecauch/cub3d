@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/01 22:47:50 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:02:32 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,23 @@ static int	load_win_frames(t_data *data)
 	return (0);
 }
 
+static int	load_gameover_frames(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < GAMEOVER_FRAMES)
+	{
+		if (load_texture(&data->texture.gameover[i], data->mlx))
+		{
+			print_error("Error: load gameover texture");
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
 static int	load_bonus(t_data *data)
 {
 	if (load_texture(&data->texture.menu_exit, data->mlx))
@@ -74,7 +91,9 @@ static int	load_bonus(t_data *data)
 		print_error("Error: load texture path: data/texture/door.xpm");
 		return (1);
 	}
-	return (load_win_frames(data));
+	if (load_win_frames(data))
+		return (1);
+	return (load_gameover_frames(data));
 }
 
 int	extract_config(char **file_content, t_data *data)

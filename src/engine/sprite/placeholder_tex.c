@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:45:24 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:45:29 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:01:07 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-static int	create_runtime_img(t_data *data, t_img *img, int size)
+int	create_runtime_img(t_data *data, t_img *img, int size)
 {
 	img->width = size;
 	img->height = size;
@@ -29,7 +29,7 @@ static int	create_runtime_img(t_data *data, t_img *img, int size)
 	return (0);
 }
 
-static void	fill_img_diamond(t_img *img, int color)
+void	fill_img_diamond(t_img *img, int color)
 {
 	int	x;
 	int	y;
@@ -50,7 +50,7 @@ static void	fill_img_diamond(t_img *img, int color)
 	}
 }
 
-static int	try_load_xpm(t_data *data, t_img *img, char *path)
+int	try_load_xpm(t_data *data, t_img *img, char *path)
 {
 	int	fd;
 

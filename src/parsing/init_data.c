@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2026/02/01 22:48:03 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:02:40 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ static void	init_bonus_texture(t_texture *texture)
 	texture->win[2].path = ft_strdup("data/texture/win_3.xpm");
 	texture->win[3].path = ft_strdup("data/texture/win_4.xpm");
 	texture->win_tick = 0;
+	texture->gameover[0].path = ft_strdup("data/texture/gameover_1.xpm");
+	texture->gameover[1].path = ft_strdup("data/texture/gameover_2.xpm");
+	texture->gameover[2].path = ft_strdup("data/texture/gameover_3.xpm");
+	texture->gameover[3].path = ft_strdup("data/texture/gameover_4.xpm");
+	texture->gameover_tick = 0;
 }
 
 void	init_minimap(t_minimap *mm)

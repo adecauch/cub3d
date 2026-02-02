@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:46:58 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:02:17 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	game_loop(t_data *data)
 	else if (data->state == GAME)
 	{
 		update_player_movement(data);
+		update_slenderman(data);
 		update_sprite_anim(data);
 		check_collectible_pickup(data);
 		check_exit_condition(data);
@@ -26,6 +27,8 @@ int	game_loop(t_data *data)
 	}
 	else if (data->state == WIN)
 		render_win(data);
+	else if (data->state == GAMEOVER)
+		render_gameover(data);
 	return (0);
 }
 

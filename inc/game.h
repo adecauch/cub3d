@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:18:01 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:43:36 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:00:00 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		mouse_move(int x, int y, t_data *data);
 void	render_menu(t_data *data);
 void	render_game(t_data *data);
 void	render_win(t_data *data);
+void	render_gameover(t_data *data);
 
 /*-----raycasting/ray_init.c-----*/
 
@@ -103,6 +104,26 @@ t_img	*get_sprite_frame(t_data *data, t_sprite *sprite);
 
 int		generate_collect_frames(t_data *data, t_sprite *sprite);
 int		generate_exit_frames(t_data *data, t_sprite *sprite);
+int		try_load_xpm(t_data *data, t_img *img, char *path);
+int		create_runtime_img(t_data *data, t_img *img, int size);
+void	fill_img_diamond(t_img *img, int color);
+
+/*-----slenderman/slender_init.c-----*/
+
+int		init_slenderman(t_data *data);
+
+/*-----slenderman/slender_move.c-----*/
+
+void	update_slenderman(t_data *data);
+
+/*-----slenderman/slender_anim.c-----*/
+
+void	update_slender_anim(t_data *data);
+void	check_slender_catch(t_data *data);
+
+/*-----slenderman/slender_render.c-----*/
+
+void	render_slenderman(t_data *data);
 
 /*-----collectible.c-----*/
 
