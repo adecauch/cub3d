@@ -40,9 +40,6 @@ static int	alloc_sprite_buffers(t_sprites *sp, int count)
 	sp->arr = malloc(sizeof(t_sprite) * count);
 	if (!sp->arr)
 		return (1);
-	sp->z_buffer = malloc(sizeof(double) * W_WIDTH);
-	if (!sp->z_buffer)
-		return (1);
 	sp->order = malloc(sizeof(int) * count);
 	if (!sp->order)
 		return (1);
@@ -106,6 +103,9 @@ int	init_sprites_from_map(t_data *data)
 	data->total_collectibles = n_collect;
 	data->sprites.collected = 0;
 	data->sprites.anim_tick = 0;
+	data->sprites.z_buffer = malloc(sizeof(double) * W_WIDTH);
+	if (!data->sprites.z_buffer)
+		return (1);
 	if (total == 0)
 		return (0);
 	if (alloc_sprite_buffers(&data->sprites, total))
