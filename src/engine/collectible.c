@@ -3,22 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   collectible.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/01 22:46:44 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/02 16:02:14 by adecauch         ###   ########.fr       */
-=======
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 15:08:03 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/01/08 13:37:27 by ramahrez         ###   ########.fr       */
->>>>>>> collectible
+/*   Created: 2026/02/07 19:07:59 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/02/07 19:08:43 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "game.h"
-<<<<<<< HEAD
+
 
 static void	collect_item(t_data *data, int i)
 {
@@ -73,8 +67,7 @@ void	check_exit_condition(t_data *data)
 		}
 		i++;
 	}
-=======
-#include "parsing.h"
+}
 
 void	verif_collectible(t_data *data)
 {
@@ -91,5 +84,4 @@ void	verif_collectible(t_data *data)
 	if (data->map[y][x] == 'T'
 		&& (data->total_collectibles == data->player.collected))
 		close_game(data);
->>>>>>> collectible
 }
