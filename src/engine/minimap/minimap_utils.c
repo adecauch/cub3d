@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 00:30:51 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/02 16:00:15 by adecauch         ###   ########.fr       */
+/*   Created: 2026/02/07 19:02:53 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/02/07 19:02:57 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,11 @@ static void	draw_minimap_tile(t_data *data, int tile[2], int scr_x, int scr_y)
 			color = 0xFF0000;
 		else if (content == '0' || ft_strchr("NSWE", content))
 			color = data->minimap.color_floor;
+		else if (content == 'C')
+			color = data->minimap.color_collectible;
+		else if (content == 'T'
+			&& (data->total_collectibles == data->player.collected))
+			color = data->minimap.color_exit;
 		else
 			color = data->minimap.color_wall;
 	}

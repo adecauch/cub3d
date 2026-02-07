@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 00:07:00 by hectordavro       #+#    #+#             */
-/*   Updated: 2026/02/02 16:02:40 by adecauch         ###   ########.fr       */
+/*   Created: 2026/02/07 19:00:13 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/02/07 19:00:16 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	init_player(t_player *player)
 	player->dir_y = 0.0;
 	player->speed = 0.0;
 	player->health = 100;
+	player->collected = 0;
 	player->damage = 10;
 }
 
@@ -51,7 +52,8 @@ void	init_minimap(t_minimap *mm)
 	mm->color_wall = 0x000000;
 	mm->color_floor = 0x555555;
 	mm->color_player = 0xFF0000;
-	mm->margin = 10;
+	mm->color_collectible = 0xffde21;
+	mm->color_exit = 0x0000ff;
 	mm->map_height = 0;
 	mm->map_width = 0;
 }
@@ -62,6 +64,7 @@ void	init_data(t_data *data)
 	data->map = NULL;
 	init_player(&data->player);
 	data->mlx = mlx_init();
+	data->total_collectibles = 0;
 	init_minimap(&data->minimap);
 	init_bonus_texture(&data->texture);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/13 14:15:05 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/02 15:59:09 by adecauch         ###   ########.fr       */
+/*   Created: 2026/02/07 19:05:56 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/02/07 19:05:59 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 typedef struct s_data
 {
+
 	t_sprites		sprites;
 	t_slenderman	slender;
 	t_minimap		minimap;

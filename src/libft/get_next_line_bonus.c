@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:56:38 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/24 00:19:44 by ramahrez         ###   ########.fr       */
+/*   Updated: 2025/12/24 16:17:39 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,27 +110,3 @@ char	*get_next_line(int fd)
 		s_var.str_size - s_var.line_lenght + 1);
 	return (free(s_var.buffer), ret);
 }
-
-//  int main(void)
-//  {
-//    int fd = open("exemple.txt", O_RDONLY);
-//    char *str;
-//    str = get_next_line(fd);
-//    while(str)
-//    {
-//      printf("%s", str);
-//      str = get_next_line(fd);
-//    }
-//    return (0);
-//  }
-
-// int main(void)
-// {
-// 	int fd = open("exemple2.txt", O_RDONLY);
-// 	char *str = get_next_line(fd);
-// 	printf("%s", str);
-// 	str = get_next_line(fd);
-// 		printf("%s", str);
-// 	str = get_next_line(fd);
-// 	printf("%s", str);
-// }
