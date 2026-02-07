@@ -6,13 +6,11 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:07:59 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 19:08:43 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/07 21:11:10 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "game.h"
-
 
 static void	collect_item(t_data *data, int i)
 {

@@ -6,10 +6,9 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:02:08 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 19:02:32 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/07 21:14:24 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "parsing.h"
 #include "game.h"
@@ -27,15 +26,9 @@ static int	check_char_map(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (!ft_strchr("01NSEWDCX ", map[i][j]) && map[i][j] != '\n')
-				return (print_error("Error:Invalid char\n"), 1);
-			//if (ft_strchr("NSEW", map[i][j]))
-			//	player++;
-			if (ft_strchr("0NSEWCX", map[i][j]))
-			{
-				if (!is_closed(map, j, i))
-					return (print_error("Error:Map not closed"), 1);
-			}
+			if (!(ft_strchr("NSEWCDXs01 ", map[i][j])))
+				return (1);
+			j++;
 		}
 		i++;
 	}
@@ -59,7 +52,7 @@ void	flood_fill(char **map_copy, int x, int y, t_check *info)
 		info->error = 1;
 		return ;
 	}
-	if (map_copy[y][x] == 'T')
+	if (map_copy[y][x] == 'X')
 		info->exit_found = 1;
 	if (map_copy[y][x] == 'C')
 		info->collectibles_found++;
@@ -89,7 +82,5 @@ int	ft_check_path_and_collectibles(char **map, t_data *data)
 		return (print_error("Error: Map not closed (hole found)"), 1);
 	if (check_info.collectibles_found != data->total_collectibles)
 		return (print_error("Error: Unreachable collectible"), 1);
-	if (!check_info.exit_found)
-		return (print_error("Error: exit not accecible"), 1);
 	return (0);
 }

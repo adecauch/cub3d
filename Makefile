@@ -6,7 +6,7 @@
 #    By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2026/02/07 19:10:28 by ramahrez         ###   ########.fr        #
+#    Updated: 2026/02/07 19:18:32 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ SRCS = src/main.c \
 	   src/libft/ft_memset.c \
 	   src/libft/ft_putstr.c \
 	   src/libft/ft_realloc.c \
+	   src/libft/ft_tabdup.c \
 	   src/libft/ft_strchr.c \
 	   src/libft/ft_strdup.c \
 	   src/libft/ft_strlen.c \

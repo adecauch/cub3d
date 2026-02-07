@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:05:56 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 19:05:59 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/07 21:10:14 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 typedef struct s_data
 {
-
 	t_sprites		sprites;
 	t_slenderman	slender;
 	t_minimap		minimap;

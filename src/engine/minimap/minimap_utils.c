@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:02:53 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 19:02:57 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/07 21:10:31 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,10 @@ static void	draw_minimap_tile(t_data *data, int tile[2], int scr_x, int scr_y)
 			color = 0x00FF00;
 		else if (content == 'X')
 			color = 0xFF0000;
+		else if (content == 'D')
+			color = 0x582900;
+		else if (content == 'd')
+			color = 0x895129;
 		else if (content == '0' || ft_strchr("NSWE", content))
 			color = data->minimap.color_floor;
 		else if (content == 'C')

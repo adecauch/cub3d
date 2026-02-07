@@ -6,10 +6,9 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:04:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 19:04:38 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/07 21:10:05 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef GAME_H
 # define GAME_H
