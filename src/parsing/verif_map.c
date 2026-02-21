@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:02:08 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/21 18:22:58 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 20:26:38 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,31 @@ int	check_garbage_after_map(char **map)
 	return (0);
 }
 
+static int check_player(char **map)
+{
+    int i;
+    int j;
+    int player_count;
+
+    i = 0;
+    player_count = 0;
+    while (map[i])
+    {
+        j = 0;
+        while (map[i][j])
+        {
+            if (map[i][j] == 'N' || map[i][j] == 'S' ||
+                map[i][j] == 'E' || map[i][j] == 'W')
+                player_count++;
+            j++;
+        }
+        i++;
+    }
+    if (player_count != 1)
+        return (1);
+    return (0);
+}
+
 int	ft_check_path_and_collectibles(char **map, t_data *data)
 {
 	char	**map_copy;
@@ -91,6 +116,8 @@ int	ft_check_path_and_collectibles(char **map, t_data *data)
 	check_info.exit_found = 0;
 	if (check_char_map(map))
 		return (print_error("char invalid in the map"), 1);
+	if(check_player(map))
+		return (print_error("Error: many players"), 1);
 	map_copy = ft_tabdup(map);
 	if (!map_copy)
 		return (print_error("Malloc error"), 1);

@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:43:01 by hectordavro       #+#    #+#             */
-/*   Updated: 2026/02/21 18:25:23 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 20:10:37 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ int	get_map(char **file_content, t_data *data)
 		if (file_content[i][skip_isspace(file_content[i])] == '1')
 		{
 			data->map = file_content + i;
-			break ;
+			return(0) ;
 		}
 		i++;
 	}
-	return (0);
+	return (print_error("Error: map missing"), 1);
 }
 
 int	extract_map_data(char **file_content, t_data *data)
