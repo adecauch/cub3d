@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2026/02/21 17:00:33 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 18:29:10 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	open_files(char *str)
 	if (ft_strncmp(".cub", str + (ft_strlen(str) - 4), 4))
 	{
 		print_error("Error: extension not goot");
+		return (-1);
 	}
 	fd = open(str, O_RDONLY);
 	if (fd < 1)
