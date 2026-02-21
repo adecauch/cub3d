@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:36:06 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/09 02:45:06 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:19:37 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@
 
 	//set_test_map(data); utile a la fonction en bas si jamais je laisse
 	//data->total_collectibles = 7;
+
+//extract_data_player(data->map, &data->player);
 static int	init_game_data(t_data *data)
 {
-	//extract_data_player(data->map, &data->player);
 	if (init_sprites_from_map(data))
 		return (print_error("Error: sprite init failed"), 1);
 	if (init_slenderman(data))

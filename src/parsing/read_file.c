@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/23 23:46:22 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:00:33 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,15 @@ static int	add_line_to_content(char ***content, char *line, int *size)
 		return (1);
 	}
 	*content = tmp;
-	(*content)[*size] = ft_strdup(line);
-	if (!(*content)[*size])
-	{
-		clean_and_error(content, *size, line,
-			"Error: allocation failed (strdup)\n");
-		return (1);
-	}
+	(*content)[*size] = line;
 	(*content)[*size + 1] = 0;
 	(*size)++;
-	free(line);
 	return (0);
 }
 
 int	ft_read_file(int fd, char ***file_content)
 {
+	char	*tmp;
 	char	*str;
 	int		size;
 	int		ret;
@@ -78,11 +72,13 @@ int	ft_read_file(int fd, char ***file_content)
 		return (1);
 	while (1)
 	{
-		str = get_next_line(fd);
-		if (str)
-			str = ft_strtrim(str, "\n");
-		if (str == NULL)
+		tmp = get_next_line(fd);
+		if (!tmp)
 			break ;
+		str = ft_strtrim(tmp, "\n");
+		free(tmp);
+		if (!str)
+			return (1);
 		ret = add_line_to_content(file_content, str, &size);
 		if (ret != 0)
 			return (1);

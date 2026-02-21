@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cleanup_linux.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 16:20:00 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/01 22:46:30 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/21 18:03:35 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static void	free_texture_paths(t_texture *texture)
 		free(texture->win[i].path);
 		free(texture->gameover[i].path);
 	}
+	if (texture->door.path)
+		free(texture->door.path);
 }
 
 static void	cleanup_sprites(t_data *data)
@@ -71,7 +73,12 @@ static void	cleanup_sprites(t_data *data)
 	{
 		j = 0;
 		while (j < data->sprites.arr[i].frame_count)
-			destroy_image(data->mlx, &data->sprites.arr[i].frames[j++]);
+		{
+			if (data->sprites.arr[i].frames[j].path)
+				free(data->sprites.arr[i].frames[j].path);
+			destroy_image(data->mlx, &data->sprites.arr[i].frames[j]);
+			j++;
+		}
 		i++;
 	}
 	free(data->sprites.arr);
@@ -82,27 +89,12 @@ static void	cleanup_sprites(t_data *data)
 
 void	cleanup_data(t_data *data)
 {
-	int	i;
-
 	free_texture_paths(&data->texture);
 	free_file_content(data->file_content);
 	if (!data->mlx)
 		return ;
 	cleanup_sprites(data);
-	destroy_image(data->mlx, &data->texture.north);
-	destroy_image(data->mlx, &data->texture.south);
-	destroy_image(data->mlx, &data->texture.east);
-	destroy_image(data->mlx, &data->texture.west);
-	destroy_image(data->mlx, &data->texture.menu_start);
-	destroy_image(data->mlx, &data->texture.menu_exit);
-	i = -1;
-	while (++i < 4)
-	{
-		destroy_image(data->mlx, &data->slender.frames[i]);
-		destroy_image(data->mlx, &data->texture.win[i]);
-		destroy_image(data->mlx, &data->texture.gameover[i]);
-	}
-	destroy_image(data->mlx, &data->render_img);
+	cleanup_images(data);
 	if (data->win)
 		mlx_destroy_window(data->mlx, data->win);
 	mlx_destroy_display(data->mlx);

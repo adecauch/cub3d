@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:07:23 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 19:07:28 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 13:39:11 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void	raycasting(t_data *data)
 		if (ray.draw_end >= W_HEIGHT)
 			ray.draw_end = W_HEIGHT - 1;
 		draw_wall_column(data, &ray, x);
-		data->sprites.z_buffer[x] = ray.perp_wall_dist;
+		if (data->sprites.z_buffer)
+			data->sprites.z_buffer[x] = ray.perp_wall_dist;
 		x++;
 	}
 }

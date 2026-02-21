@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extract_player_data.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:51:24 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/09 02:44:17 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:00:19 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	extract_data_player(char **map, t_player *player)
 {
 	int	i;
 	int	j;
-	int error;
-	
+	int	error;
+
 	error = 1;
 	i = 0;
 	while (map[i])

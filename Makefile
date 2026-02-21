@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+         #
+#    By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2026/02/07 19:18:32 by ramahrez         ###   ########.fr        #
+#    Updated: 2026/02/21 18:05:50 by ramahrez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRCS = src/main.c \
 	   src/engine/render.c \
 	   src/engine/minimap/minimap.c \
 	   src/engine/minimap/minimap_utils.c \
+	   src/engine/cleanup_linux_utils.c \
 	   src/engine/raycasting/raycasting.c \
 	   src/engine/raycasting/ray_init.c \
 	   src/engine/raycasting/ray_dda.c \

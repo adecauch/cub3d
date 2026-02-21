@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:04:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 21:10:05 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:18:49 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,10 @@ void	check_exit_condition(t_data *data);
 
 void	cleanup_data(t_data *data);
 void	free_file_content(char **file_content);
+
+/*-----cleanup_linux_utils.c-----*/
+
+void	cleanup_images(t_data *data);
 
 /*----------collectible.c--------------------*/
 
