@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:36:06 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/07 21:13:40 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/09 02:45:06 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 	//data->total_collectibles = 7;
 static int	init_game_data(t_data *data)
 {
-	extract_data_player(data->map, &data->player);
+	//extract_data_player(data->map, &data->player);
 	if (init_sprites_from_map(data))
 		return (print_error("Error: sprite init failed"), 1);
 	if (init_slenderman(data))

@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:02:53 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 21:10:31 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/09 02:32:52 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,32 @@ static void	draw_minimap_pixel_square(t_data *data, int scr_x, int scr_y,
 	}
 }
 
+static void init_color_square(char content, int *color, t_data *data)
+{
+	if (content == '1')
+			*color = data->minimap.color_wall;
+		else if (content == 'C')
+			*color = data->minimap.color_floor;
+		else if (content == 'X' && data->sprites.collected
+			>= data->total_collectibles)
+			*color = 0x00FF00;
+		else if (content == 'X')
+			*color = 0xFF0000;
+		else if (content == 'D')
+			*color = 0x582900;
+		else if (content == 'd')
+			*color = 0x895129;
+		else if (content == '0' || ft_strchr("NSWE", content))
+			*color = data->minimap.color_floor;
+		else if (content == 'C')
+			*color = data->minimap.color_collectible;
+		else if (content == 'T'
+			&& (data->total_collectibles == data->player.collected))
+			*color = data->minimap.color_exit;
+		else
+			*color = data->minimap.color_wall;
+}
+
 static void	draw_minimap_tile(t_data *data, int tile[2], int scr_x, int scr_y)
 {
 	int		color;
@@ -55,28 +81,7 @@ static void	draw_minimap_tile(t_data *data, int tile[2], int scr_x, int scr_y)
 	else
 	{
 		content = data->map[tile[1]][tile[0]];
-		if (content == '1')
-			color = data->minimap.color_wall;
-		else if (content == 'C')
-			color = data->minimap.color_floor;
-		else if (content == 'X' && data->sprites.collected
-			>= data->total_collectibles)
-			color = 0x00FF00;
-		else if (content == 'X')
-			color = 0xFF0000;
-		else if (content == 'D')
-			color = 0x582900;
-		else if (content == 'd')
-			color = 0x895129;
-		else if (content == '0' || ft_strchr("NSWE", content))
-			color = data->minimap.color_floor;
-		else if (content == 'C')
-			color = data->minimap.color_collectible;
-		else if (content == 'T'
-			&& (data->total_collectibles == data->player.collected))
-			color = data->minimap.color_exit;
-		else
-			color = data->minimap.color_wall;
+		init_color_square(content, &color, data);
 	}
 	draw_minimap_pixel_square(data, scr_x, scr_y, color);
 }
