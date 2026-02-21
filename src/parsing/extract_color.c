@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 12:23:10 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/18 15:19:16 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 18:11:37 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	parse_next_component(char **line_ptr, int *component_out)
 		return (1);
 	*line_ptr = *line_ptr + skip_isspace(*line_ptr);
 	if (**line_ptr != ',')
-		return (print_error("Error: color invalid"), 1);
+		return (1);
 	(*line_ptr)++;
 	return (0);
 }

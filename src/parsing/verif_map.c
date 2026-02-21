@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   verif_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:02:08 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 21:14:24 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 18:22:58 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
-#include "game.h"
-#include <stdio.h>
 #include "flood_fill.h"
+#include "game.h"
+#include "parsing.h"
+#include <stdio.h>
 
 static int	check_char_map(char **map)
 {
@@ -46,8 +46,8 @@ void	flood_fill(char **map_copy, int x, int y, t_check *info)
 	}
 	if (map_copy[y][x] == '1' || map_copy[y][x] == 'V')
 		return ;
-	if (map_copy[y][x] == ' ' || map_copy[y][x] == '\t' ||
-			map_copy[y][x] == 0 || map_copy[y][x] == '\n')
+	if (map_copy[y][x] == ' ' || map_copy[y][x] == '\t' || map_copy[y][x] == 0
+		|| map_copy[y][x] == '\n')
 	{
 		info->error = 1;
 		return ;
@@ -61,6 +61,24 @@ void	flood_fill(char **map_copy, int x, int y, t_check *info)
 	flood_fill(map_copy, x - 1, y, info);
 	flood_fill(map_copy, x, y + 1, info);
 	flood_fill(map_copy, x, y - 1, info);
+}
+
+int	check_garbage_after_map(char **map)
+{
+	int	i;
+	int	map_ended;
+
+	i = 0;
+	map_ended = 0;
+	while (map[i])
+	{
+		if (map[i][skip_isspace(map[i])] == '\0')
+			map_ended = 1;
+		else if (map_ended == 1)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 int	ft_check_path_and_collectibles(char **map, t_data *data)

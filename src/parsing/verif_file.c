@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verif_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:32:20 by hectordavro       #+#    #+#             */
-/*   Updated: 2026/01/03 01:02:04 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 18:09:49 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ int	verif_textures(char **files)
 		i++;
 	}
 	if (count != 6)
-		return (print_error("Error: Missing textures\n"), 1);
+		return (print_error("Error: Missing textures"), 1);
 	return (0);
 }

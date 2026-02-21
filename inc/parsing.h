@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:09:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/21 13:42:01 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 18:23:32 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int		extract_map_data(char **file_content, t_data *data);
 int		ft_check_path_and_collectibles(char **map, t_data *data);
 int		extract_data_player(char **map, t_player *player);
 int		verif_door(char **map);
+int		check_garbage_after_map(char **map);
 
 /*-----string_utils.c-----*/
 
