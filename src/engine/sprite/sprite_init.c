@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 22:46:08 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/21 16:43:52 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 19:35:54 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,6 @@ int	init_sprites_from_map(t_data *data)
 	int	n_exit;
 	int	total;
 
-	data->sprites.z_buffer = malloc(sizeof(double) * W_WIDTH);
-	if (!data->sprites.z_buffer)
-		return (1);
 	total = count_sprites(data->map, &n_collect, &n_exit);
 	data->sprites.count = total;
 	data->total_collectibles = n_collect;

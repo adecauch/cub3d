@@ -6,15 +6,34 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 23:52:39 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/21 20:31:42 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 19:59:54 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "parsing.h"
 
+static int	check_xpm_extension(char *path)
+{
+	int	len;
+
+	if (!path)
+		return (1);
+	len = ft_strlen(path);
+	if (len < 4)
+		return (1);
+	if (ft_strncmp(&path[len - 4], ".xpm", 4) != 0)
+		return (1);
+	return (0);
+}
+
 int	load_texture(t_img *texture, void *mlx)
 {
+	if (check_xpm_extension(texture->path))
+	{
+		print_error("Error: Texture path must end with .xpm");
+		return (1);
+	}
 	texture->img = mlx_xpm_file_to_image(mlx, texture->path, &texture->width,
 			&texture->height);
 	if (!texture->img)

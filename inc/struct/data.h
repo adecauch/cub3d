@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:05:56 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 21:10:14 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 19:25:50 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_data
 	t_texture		texture;
 	t_img			render_img;
 	char			**file_content;
+	int				file_content_fd;
 	char			**map;
 	char			**map_backup;
 	t_player		player;

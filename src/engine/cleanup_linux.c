@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 16:20:00 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/22 19:39:10 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 19:45:56 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,11 @@ void	cleanup_data(t_data *data)
 	close(data->file_content_fd);
 	free_texture_paths(&data->texture);
 	free_file_content(data->file_content);
-	free_file_content(data->map_backup);
+	if (data->map_backup)
+	{
+		free_file_content(data->map);
+		free_file_content(data->map_backup);
+	}
 	if (!data->mlx)
 		return ;
 	cleanup_sprites(data);
