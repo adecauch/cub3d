@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:04:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/21 17:18:49 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 18:38:10 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,5 +142,9 @@ void	cleanup_images(t_data *data);
 /*----------collectible.c--------------------*/
 
 void	verif_collectible(t_data *data);
+
+/*----------frame_delay.c--------------------*/
+
+void	frame_delay(void);
 
 #endif

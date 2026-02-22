@@ -30,17 +30,20 @@ ifeq ($(UNAME_S),Darwin)
 	LIBS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
 	CLEANUP_SRC = src/engine/cleanup_macos.c
 	MOUSE_SRC = src/engine/mouse_macos.c
+	FRAME_DELAY_SRC = src/engine/frame_delay_macos.c
 else
 	MLX_DIR = inc/mlx_linux
 	LIBS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 	CLEANUP_SRC = src/engine/cleanup_linux.c
 	MOUSE_SRC = src/engine/mouse_linux.c
+	FRAME_DELAY_SRC = src/engine/frame_delay_linux.c
 endif
 
 SRCS = src/main.c \
        src/engine/game.c \
        $(CLEANUP_SRC) \
        $(MOUSE_SRC) \
+       $(FRAME_DELAY_SRC) \
        src/engine/key_handler.c \
        src/engine/render.c \
        src/engine/minimap/minimap.c \

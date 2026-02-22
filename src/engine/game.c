@@ -6,7 +6,7 @@
 /*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:09:07 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/22 18:23:11 by adecauch         ###   ########.fr       */
+/*   Updated: 2026/02/22 18:34:48 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	game_loop(t_data *data)
 		render_win(data);
 	else if (data->state == GAMEOVER)
 		render_gameover(data);
-	usleep(16666);
+	frame_delay();
 	return (0);
 }
 
