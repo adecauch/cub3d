@@ -6,12 +6,13 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 16:20:00 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/21 18:03:35 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 19:39:10 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include <stdlib.h>
+#include <unistd.h>
 
 void	free_file_content(char **file_content)
 {
@@ -89,9 +90,9 @@ static void	cleanup_sprites(t_data *data)
 
 void	cleanup_data(t_data *data)
 {
+	close(data->file_content_fd);
 	free_texture_paths(&data->texture);
 	free_file_content(data->file_content);
-	free_file_content(data->map);
 	free_file_content(data->map_backup);
 	if (!data->mlx)
 		return ;
