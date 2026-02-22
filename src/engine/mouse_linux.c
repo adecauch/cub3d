@@ -24,5 +24,10 @@ int	mouse_move(int x, int y, t_data *data)
 	data->mouse_x = x;
 	rotation = delta_x * 0.002;
 	rotate_player(&data->player, rotation);
+	if (x < 100 || x > W_WIDTH - 100)
+	{
+		data->mouse_x = W_WIDTH / 2;
+		mlx_mouse_move(data->mlx, data->win, W_WIDTH / 2, W_HEIGHT / 2);
+	}
 	return (0);
 }
