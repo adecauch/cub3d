@@ -14,7 +14,7 @@ GREEN = \033[0;32m
 RED = \033[0;31m
 RESET = \033[0m
 
-NAME = Cub3D
+NAME = cub3D
 CC = cc
 # J'ai ajoute fsanitize ici pour ton debuggage
 CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address
