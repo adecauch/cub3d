@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:09:07 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/07 21:11:29 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 18:23:11 by adecauch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	game_loop(t_data *data)
 		render_win(data);
 	else if (data->state == GAMEOVER)
 		render_gameover(data);
+	usleep(16666);
 	return (0);
 }
 
