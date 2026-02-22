@@ -17,7 +17,7 @@ RESET = \033[0m
 NAME = cub3D
 CC = cc
 # J'ai ajoute fsanitize ici pour ton debuggage
-CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 UNAME_S = $(shell uname -s)
 
 # Variables pour le testeur
