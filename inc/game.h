@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/26 16:18:01 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/02 16:00:00 by adecauch         ###   ########.fr       */
+/*   Created: 2026/02/07 19:04:35 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/02/21 17:18:49 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,5 +134,13 @@ void	check_exit_condition(t_data *data);
 
 void	cleanup_data(t_data *data);
 void	free_file_content(char **file_content);
+
+/*-----cleanup_linux_utils.c-----*/
+
+void	cleanup_images(t_data *data);
+
+/*----------collectible.c--------------------*/
+
+void	verif_collectible(t_data *data);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extract_config.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 15:35:33 by ramahrez          #+#    #+#             */
-/*   Updated: 2026/02/02 16:02:32 by adecauch         ###   ########.fr       */
+/*   Created: 2026/02/07 18:59:15 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/02/22 16:26:33 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,11 @@ int	extract_config(char **file_content, t_data *data)
 		return (1);
 	if (extract_map_data(file_content, data))
 		return (1);
-	extract_data_player(data->map, &data->player);
+	if (extract_data_player(data->map, &data->player))
+		return (1);
 	if (verif_door(data->map))
+		return (1);
+	if (ft_check_path_and_collectibles(data->map, data))
 		return (1);
 	if (load_bonus(data))
 		return (1);

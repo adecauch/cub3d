@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:09:35 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/24 00:13:03 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/21 18:23:32 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_read_file(int fd, char ***file_content);
 
 /*-----verif_file.c-----*/
 
-int		verif_files(char **files);
+int		verif_textures(char **files);
 
 /*-----extract_config.c-----*/
 
@@ -52,9 +52,10 @@ int		extract_map_data(char **file_content, t_data *data);
 
 /*-----verif_map.c-----*/
 
-int		ft_check_map(char **map);
-void	extract_data_player(char **map, t_player *player);
+int		ft_check_path_and_collectibles(char **map, t_data *data);
+int		extract_data_player(char **map, t_player *player);
 int		verif_door(char **map);
+int		check_garbage_after_map(char **map);
 
 /*-----string_utils.c-----*/
 
@@ -70,14 +71,15 @@ size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
 char	*ft_strchr(const char *str, int c);
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 void	ft_putstr(char *str);
 void	print_error(char *str);
 char	*get_next_line(int fd);
-
+char	**ft_tabdup(char **grid);
+char	*ft_itoa(int nb);
 /*-----debug-----*/
 
 void	ft_print_tab(char **tab);

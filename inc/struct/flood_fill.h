@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug_utils.c                                      :+:      :+:    :+:   */
+/*   flood_fill.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 14:55:00 by adecauch          #+#    #+#             */
-/*   Updated: 2025/12/17 14:55:00 by adecauch         ###   ########.fr       */
+/*   Created: 2026/01/03 14:56:57 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/01/03 14:59:34 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
-#include <stdio.h>
+#ifndef FLOOD_FILL_H
+# define FLOOD_FILL_H
 
-void	ft_print_tab(char **tab)
+typedef struct s_check
 {
-	int	i;
+	int	collectibles_found;
+	int	exit_found;
+	int	error;
+}	t_check;
 
-	i = 0;
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-}
+#endif

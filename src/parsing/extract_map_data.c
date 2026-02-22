@@ -6,11 +6,30 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:43:01 by hectordavro       #+#    #+#             */
-/*   Updated: 2025/12/18 12:02:09 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 14:06:39 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+
+static void	count_collectibles(char **map, int *total_collectibles)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (map[y][x] == 'C')
+				*total_collectibles += 1;
+			x++;
+		}
+		y++;
+	}
+}
 
 static void	get_map_height(char **map, int *height)
 {
@@ -51,18 +70,23 @@ int	get_map(char **file_content, t_data *data)
 		if (file_content[i][skip_isspace(file_content[i])] == '1')
 		{
 			data->map = file_content + i;
-			break ;
+			return (0);
 		}
 		i++;
 	}
-	return (0);
+	return (print_error("Error: map missing"), 1);
 }
 
 int	extract_map_data(char **file_content, t_data *data)
 {
 	if (get_map(file_content, data))
 		return (1);
+	if (check_garbage_after_map(data->map))
+		return (print_error("Error: invalid map"), 1);
 	get_map_height((data->map), &data->minimap.map_height);
 	get_map_width((data->map), &data->minimap.map_width);
+	if (data->minimap.map_height > 8000 || data->minimap.map_height > 8000)
+		return (print_error("Error: map too big"), 1);
+	count_collectibles(data->map, &data->total_collectibles);
 	return (0);
 }

@@ -1,7 +1,7 @@
-NO textures/simonkraft/wet_sponge.xpm
-SO textures/simonkraft/wet_sponge.xpm
-WE textures/simonkraft/wet_sponge.xpm
-EA textures/simonkraft/wet_sponge.xpm
+WE  data/texture/wall_west.xpm
+NO  data/texture/wall_north.xpm
+SO  data/texture/wall_south.xpm
+EA  data/texture/wall_east.xpm
 
 F 164,169,20
 C 153,204, 255
@@ -14,7 +14,7 @@ C 153,204, 255
 100000101000101000001
 101111101011101111111
 101000001010100000101
-101011111010111110101
+101011111X10111110101
 101010001010100010101
 101110101010101010101
 100000101010001010001

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   collectible.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/01 22:46:44 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/02 16:02:14 by adecauch         ###   ########.fr       */
+/*   Created: 2026/02/07 19:07:59 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/02/07 21:11:10 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,21 @@ void	check_exit_condition(t_data *data)
 		}
 		i++;
 	}
+}
+
+void	verif_collectible(t_data *data)
+{
+	int	x;
+	int	y;
+
+	x = data->player.x;
+	y = data->player.y;
+	if (data->map[y][x] == 'C')
+	{
+		data->player.collected++;
+		data->map[y][x] = '0';
+	}
+	if (data->map[y][x] == 'T'
+		&& (data->total_collectibles == data->player.collected))
+		close_game(data);
 }

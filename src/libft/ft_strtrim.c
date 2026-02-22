@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hectordavrou <hectordavrou@student.42.f    +#+  +:+       +#+        */
+/*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:45:44 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/10 18:15:06 by hectordavro      ###   ########.fr       */
+/*   Updated: 2026/02/21 13:58:09 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+#include <stdlib.h>
 
 static int	ft_totrim(char c, char const *set)
 {
@@ -26,7 +27,7 @@ static int	ft_totrim(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char *s1, char const *set)
 {
 	int		min;
 	int		max;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adecauch <adecauch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 20:32:41 by adecauch          #+#    #+#             */
-/*   Updated: 2026/02/02 16:02:17 by adecauch         ###   ########.fr       */
+/*   Created: 2026/02/07 19:09:07 by ramahrez          #+#    #+#             */
+/*   Updated: 2026/02/07 21:11:29 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	game_loop(t_data *data)
 		check_collectible_pickup(data);
 		check_exit_condition(data);
 		render_game(data);
+		verif_collectible(data);
 	}
 	else if (data->state == WIN)
 		render_win(data);

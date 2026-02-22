@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 12:04:01 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/23 23:49:48 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/07 21:02:59 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	is_floor(char c)
 {
 	return (c == '0' || c == 'N'
-		|| c == 'S' || c == 'E' || c == 'W');
+		|| c == 'S' || c == 'E' || c == 'W' || c == 'C' || c == 'X');
 }
 
 static int	validate_door(char **map, int y, int x)

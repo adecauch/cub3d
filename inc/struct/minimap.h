@@ -6,7 +6,7 @@
 /*   By: ramahrez <rayenmahrez@student.42.f>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 00:15:10 by ramahrez          #+#    #+#             */
-/*   Updated: 2025/12/24 00:18:47 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/01/08 13:45:19 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_minimap
 	int		color_wall;
 	int		color_floor;
 	int		color_player;
-	int		margin;
-	double	scale_factor;
+	int		color_collectible;
+	int		color_exit;
 }	t_minimap;
 
 #endif

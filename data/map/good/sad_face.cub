@@ -1,7 +1,8 @@
-NO textures/simonkraft/soul_sand.xpm
-SO textures/simonkraft/soul_soil_01.xpm
-WE textures/simonkraft/soul_soil.xpm
-EA textures/simonkraft/soul_sand.xpm
+WE  data/texture/wall_west.xpm
+NO  data/texture/wall_north.xpm
+SO  data/texture/wall_south.xpm
+EA  data/texture/wall_east.xpm
+
 
 C 53,41,34
 F 45,33,27
