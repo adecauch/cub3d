@@ -1,9 +1,50 @@
 NO data/texture/wall_north.xpm
+
+
+
 SO data/texture/wall_south.xpm
-WE data/texture/wall_west.xpm
-EA data/texture/wall_east.xpm
+
+
+
+
+WE                      data/texture/wall_west.xpm
+
+
+
+
+
+
+EA                          data/texture/wall_east.xpm
 
 F 20,20,20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 C 200,200,200
 
 11111

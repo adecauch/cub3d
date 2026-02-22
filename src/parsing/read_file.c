@@ -6,7 +6,7 @@
 /*   By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:38:44 by hectordavro       #+#    #+#             */
-/*   Updated: 2026/02/21 18:29:10 by ramahrez         ###   ########.fr       */
+/*   Updated: 2026/02/22 15:46:46 by ramahrez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ int	ft_read_file(int fd, char ***file_content)
 			return (1);
 	}
 	if (size == 0)
-		return (-1);
+		return (print_error("Error: file empty"), -1);
 	return (0);
 }
