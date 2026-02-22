@@ -106,4 +106,6 @@ void	cleanup_data(t_data *data)
 	}
 	free_texture_paths(&data->texture);
 	free_file_content(data->file_content);
+	free_file_content(data->map);
+	free_file_content(data->map_backup);
 }

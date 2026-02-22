@@ -66,6 +66,10 @@ int		close_game(t_data *data);
 void	init_game(t_data *data);
 int		game(t_data *data);
 
+/*-----reset_game.c-----*/
+
+void	reset_game(t_data *data);
+
 /*-----player_movement.c-----*/
 
 void	rotate_player(t_player *player, double rotation_speed);

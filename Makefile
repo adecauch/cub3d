@@ -45,6 +45,7 @@ SRCS = src/main.c \
        $(MOUSE_SRC) \
        $(FRAME_DELAY_SRC) \
        src/engine/key_handler.c \
+       src/engine/reset_game.c \
        src/engine/render.c \
        src/engine/minimap/minimap.c \
        src/engine/minimap/minimap_utils.c \

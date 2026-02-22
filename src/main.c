@@ -41,6 +41,8 @@ int	main(int argc, char **argv)
 		close_game(&data);
 		return (1);
 	}
+	data.map_backup = ft_tabdup(data.map);
+	data.map = ft_tabdup(data.map_backup);
 	if (init_game_data(&data))
 	{
 		close_game(&data);

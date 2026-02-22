@@ -30,6 +30,7 @@ typedef struct s_data
 	t_img			render_img;
 	char			**file_content;
 	char			**map;
+	char			**map_backup;
 	t_player		player;
 	int				keys[70000];
 	int				mouse_x;

@@ -40,6 +40,8 @@ int	key_press(int keycode, t_data *data)
 		close_game(data);
 	if (data->state == MENU)
 		handle_menu_keys(keycode, data);
+	else if (data->state == GAMEOVER && keycode == KEY_ENTER)
+		reset_game(data);
 	else if (data->state == GAME)
 	{
 		if (keycode == KEY_E)
