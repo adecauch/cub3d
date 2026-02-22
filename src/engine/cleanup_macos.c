@@ -81,26 +81,11 @@ static void	cleanup_sprites(t_data *data)
 
 void	cleanup_data(t_data *data)
 {
-	int	i;
-
 	if (data->mlx)
 	{
 		if (data->sprites.count > 0)
 			cleanup_sprites(data);
-		destroy_image(data->mlx, &data->texture.north);
-		destroy_image(data->mlx, &data->texture.south);
-		destroy_image(data->mlx, &data->texture.east);
-		destroy_image(data->mlx, &data->texture.west);
-		destroy_image(data->mlx, &data->texture.menu_start);
-		destroy_image(data->mlx, &data->texture.menu_exit);
-		i = -1;
-		while (++i < 4)
-		{
-			destroy_image(data->mlx, &data->slender.frames[i]);
-			destroy_image(data->mlx, &data->texture.win[i]);
-			destroy_image(data->mlx, &data->texture.gameover[i]);
-		}
-		destroy_image(data->mlx, &data->render_img);
+		cleanup_images(data);
 		if (data->win)
 			mlx_destroy_window(data->mlx, data->win);
 	}
