@@ -2,11 +2,11 @@
 
 # Cub3D
 
-**A raycasting engine in C: from a 2D grid to textured first-person rendering, sprite projection and interactive exploration.**
+**A raycasting engine in C powering a Slenderman-inspired exploration and horror game, with textured first-person rendering and interactive gameplay.**
 
 [English](#english) | [Français](#francais)
 
-<!-- Demo: add cub3d.gif at the repository root, then replace this comment with ![Cub3D Demo](cub3d.gif). Shared by both languages; display it only here. -->
+![Cub3D Demo](cub3d.gif)
 ---
 
 <a id="english"></a>
@@ -21,10 +21,16 @@ Cub3D belongs to the École 42 Paris common core curriculum, a project-based, pe
 
 The challenge is to implement the rendering mechanisms rather than use a complete game engine. MiniLibX supplies windows, images and event hooks; the project code computes ray intersections, perspective, texture coordinates, movement and sprite visibility. Parsing, graphical resources and game state must then work together throughout the application lifecycle.
 
+Developed as a two-person project at 42 Paris, Cub3D involved a clear division of responsibilities. My teammate implemented the configuration and map parser, the minimap and a dedicated automated parsing and map-validation test suite. I developed the rest of the engine and gameplay: raycasting and DDA, wall projection and texture rendering, sprites, player movement and collisions, door interactions, collectibles, Slenderman mechanics, menus and game screens, as well as the overall module integration.
+
+I also shaped the game's art direction through hand-crafted pixel art and visual assets created with Aseprite, giving the Slenderman-inspired experience its own visual identity. The [graphics resources](data/texture/) include wall and door textures, collectible, exit and pursuer sprites, menus and end screens.
+
 <a id="en-overview"></a>
 ### 2. Overview
 
-Cub3D creates a first-person view of a grid-based environment, following the raycasting approach associated with games such as *Wolfenstein 3D*. For each screen column, a ray crosses the 2D map until it reaches a wall or a closed door. The perpendicular hit distance determines the height of the textured column drawn on screen.
+Cub3D is a raycasting engine built around a Slenderman-inspired exploration and horror game. Its main experience, [slenderman.cub](data/map/slenderman.cub), combines exploration, interactive doors and collectible gathering while a pursuer closes in. Collecting every item unlocks the exit; reaching it wins the game, while being caught triggers game over. A start menu and animated end screens frame the experience.
+
+The engine creates a first-person view of a grid-based environment, following the raycasting approach associated with games such as *Wolfenstein 3D*. For each screen column, a ray crosses the 2D map until it reaches a wall or a closed door. The perpendicular hit distance determines the height of the textured column drawn on screen.
 
 This implementation loads a `.cub` scene, initializes the player's position and camera, and renders a **1280 × 720** view with solid floor and ceiling colours. It also includes a player-centred minimap, interactive doors, animated collectible sprites, an unlockable exit and a Slenderman pursuer on maps that contain them.
 
@@ -194,7 +200,7 @@ From the repository root:
 
 ```bash
 make                              # Build ./cub3d
-./cub3d data/map/good/works.cub     # Open the menu with a supplied scene
+./cub3d data/map/slenderman.cub     # Open the menu for the main game experience
 ```
 
 Run from the repository root: scene texture paths and the additional menu, door and sprite asset paths are relative to the working directory. The executable requires exactly one scene argument. Press Enter on the default Start selection to enter the environment.
@@ -206,22 +212,24 @@ make re         # Full cleanup, then rebuild
 make test       # Build, clone the external tester if absent, run its map script
 ```
 
-`make test` requires Git, Bash and network access for the first clone of [tester_cub3D](https://github.com/rmahrez19/tester_cub3D). The normal `make` target already includes all gameplay modules; there is no separate bonus build target. Both platform branches were inspected; macOS compilation units were checked with `-fsyntax-only`. Full linking and graphical execution were not performed for this documentation update.
+`make test` requires Git, Bash and network access for the initial clone of the tester repository configured by `TESTER_URL` in the [Makefile](Makefile). After building the game, it clones `https://github.com/rmahrez19/tester_cub3D.git` into `tester_cub3D/` if that directory is absent, then runs `bash tester_cub3D/test_maps.sh`. The repository currently returns HTTP 404 for unauthenticated public access, so the initial clone depends on that repository being accessible to you. The normal `make` target already includes all gameplay modules; there is no separate bonus build target.
 
 <a id="en-examples"></a>
 ### 7. Usage Examples
 
-**Build and explore a supplied map** — start the application, press Enter, then move through the corridors and compare the textured view with the minimap.
+**Build and launch the Slenderman experience** — start the application, press Enter, then explore the environment and use the minimap to navigate.
 
 ```bash
 make
-./cub3d data/map/good/works.cub
+./cub3d data/map/slenderman.cub
 ```
 
-**Try the gameplay scene** — [slenderman.cub](data/map/slenderman.cub) includes doors, collectibles, an exit and a pursuer. Approach collectible centres to pick them up, face a nearby door and press `E` to toggle it, then reach the exit after gathering every item. The pursuer accelerates as the collection progresses; after capture, Enter restores the initial scene and starts again.
+**Play the main scene** — [slenderman.cub](data/map/slenderman.cub) includes doors, collectibles, an exit and a pursuer. Approach collectible centres to pick them up, face a nearby door and press `E` to toggle it, then reach the exit after gathering every item. The pursuer accelerates as the collection progresses; after capture, Enter restores the initial scene and starts again.
+
+**Explore an alternative map** — move through the corridors of [works.cub](data/map/good/works.cub) and compare the textured view with the minimap.
 
 ```bash
-./cub3d data/map/slenderman.cub
+./cub3d data/map/good/works.cub
 ```
 
 **Explore another layout** — [cheese_maze.cub](data/map/good/cheese_maze.cub) provides a maze with an exit and no collectibles or pursuer; the exit is therefore available immediately.
@@ -269,10 +277,16 @@ Cub3D s'inscrit dans le tronc commun de l'École 42 Paris, une formation par pro
 
 Le défi consiste à implémenter les mécanismes de rendu plutôt qu'à utiliser un moteur de jeu complet. MiniLibX fournit les fenêtres, les images et les hooks d'événements ; le code du projet calcule les intersections des rayons, la perspective, les coordonnées de texture, les déplacements et la visibilité des sprites. Le parsing, les ressources graphiques et l'état du jeu doivent ensuite fonctionner ensemble tout au long du cycle de vie de l'application.
 
+Développé en binôme à 42 Paris, Cub3D repose sur une répartition claire des responsabilités. Mon coéquipier a développé le parser de configuration et de cartes, la minimap et un testeur automatisé dédié au parsing et à la validation des cartes. J'ai développé le reste du moteur et du gameplay : raycasting et DDA, projection des murs et rendu des textures, sprites, déplacements et collisions du joueur, interactions avec les portes, collectibles, mécaniques de Slenderman, menus et écrans de jeu, ainsi que l'intégration générale des modules.
+
+J'ai également réalisé la direction artistique du jeu à travers un travail de pixel art et de création d'éléments visuels à la main avec Aseprite, donnant à cette expérience inspirée de Slenderman sa propre identité visuelle. Les [ressources graphiques](data/texture/) comprennent des textures de murs et de portes, des sprites d'objets, de sortie et de poursuivant, des menus et des écrans de fin.
+
 <a id="fr-presentation"></a>
 ### 2. Présentation
 
-Cub3D produit une vue à la première personne d'un environnement sur grille, selon l'approche du raycasting associée à des jeux comme *Wolfenstein 3D*. Pour chaque colonne de l'écran, un rayon traverse la carte 2D jusqu'à rencontrer un mur ou une porte fermée. La distance perpendiculaire à l'impact détermine la hauteur de la colonne texturée affichée.
+Cub3D est un moteur de raycasting construit autour d'un jeu d'exploration et d'horreur inspiré de Slenderman. Son expérience principale, [slenderman.cub](data/map/slenderman.cub), associe exploration, portes interactives et collecte d'objets sous la menace d'un poursuivant. Ramasser tous les objets déverrouille la sortie ; l'atteindre permet de gagner, tandis qu'une capture déclenche le game over. Un menu de lancement et des écrans de fin animés encadrent l'expérience.
+
+Le moteur produit une vue à la première personne d'un environnement sur grille, selon l'approche du raycasting associée à des jeux comme *Wolfenstein 3D*. Pour chaque colonne de l'écran, un rayon traverse la carte 2D jusqu'à rencontrer un mur ou une porte fermée. La distance perpendiculaire à l'impact détermine la hauteur de la colonne texturée affichée.
 
 Cette implémentation charge une scène `.cub`, initialise la position du joueur et sa caméra, puis affiche une vue de **1280 × 720** avec un sol et un plafond de couleur unie. Elle comprend également une minimap centrée sur le joueur, des portes interactives, des sprites animés à collecter, une sortie déverrouillable et un poursuivant Slenderman sur les cartes qui en contiennent.
 
@@ -442,7 +456,7 @@ Depuis la racine du dépôt :
 
 ```bash
 make                              # Compiler ./cub3d
-./cub3d data/map/good/works.cub     # Ouvrir le menu avec une scène fournie
+./cub3d data/map/slenderman.cub     # Ouvrir le menu de l'expérience principale
 ```
 
 Lancez le programme depuis la racine : les chemins des textures de scène et ceux des assets supplémentaires de menu, de porte et de sprites sont relatifs au répertoire courant. L'exécutable attend exactement un argument de scène. Appuyez sur Entrée avec la sélection Start par défaut pour entrer dans l'environnement.
@@ -454,22 +468,24 @@ make re         # Nettoyage complet, puis recompilation
 make test       # Compiler, cloner le testeur externe si absent et lancer son script de cartes
 ```
 
-`make test` nécessite Git, Bash et un accès réseau pour le premier clonage de [tester_cub3D](https://github.com/rmahrez19/tester_cub3D). La cible `make` normale inclut déjà tous les modules de gameplay ; il n'existe pas de cible de compilation bonus séparée. Les deux branches de plateforme ont été inspectées ; les unités de compilation macOS ont été vérifiées avec `-fsyntax-only`. L'édition de liens complète et l'exécution graphique n'ont pas été effectuées pour cette mise à jour documentaire.
+`make test` nécessite Git, Bash et un accès réseau pour le clonage initial du dépôt du testeur configuré par `TESTER_URL` dans le [Makefile](Makefile). Après compilation du jeu, la cible clone `https://github.com/rmahrez19/tester_cub3D.git` dans `tester_cub3D/` si ce dossier est absent, puis exécute `bash tester_cub3D/test_maps.sh`. Le dépôt renvoie actuellement une erreur HTTP 404 en accès public non authentifié ; le clonage initial nécessite donc de disposer d'un accès au dépôt. La cible `make` normale inclut déjà tous les modules de gameplay ; il n'existe pas de cible de compilation bonus séparée.
 
 <a id="fr-exemples"></a>
 ### 7. Exemples d'utilisation
 
-**Compiler et explorer une carte fournie** — lancez l'application, appuyez sur Entrée, puis parcourez les couloirs en comparant la vue texturée et la minimap.
+**Compiler et lancer l'expérience Slenderman** — lancez l'application, appuyez sur Entrée, puis explorez l'environnement en vous orientant grâce à la minimap.
 
 ```bash
 make
-./cub3d data/map/good/works.cub
+./cub3d data/map/slenderman.cub
 ```
 
-**Essayer la scène de gameplay** — [slenderman.cub](data/map/slenderman.cub) contient des portes, des objets à collecter, une sortie et un poursuivant. Approchez-vous du centre des objets pour les ramasser, placez-vous face à une porte proche et appuyez sur `E` pour changer son état, puis rejoignez la sortie après avoir tout collecté. Le poursuivant accélère au fil de la collecte ; après une capture, Entrée restaure la scène initiale et relance la partie.
+**Jouer à la scène principale** — [slenderman.cub](data/map/slenderman.cub) contient des portes, des objets à collecter, une sortie et un poursuivant. Approchez-vous du centre des objets pour les ramasser, placez-vous face à une porte proche et appuyez sur `E` pour changer son état, puis rejoignez la sortie après avoir tout collecté. Le poursuivant accélère au fil de la collecte ; après une capture, Entrée restaure la scène initiale et relance la partie.
+
+**Explorer une carte alternative** — parcourez les couloirs de [works.cub](data/map/good/works.cub) en comparant la vue texturée et la minimap.
 
 ```bash
-./cub3d data/map/slenderman.cub
+./cub3d data/map/good/works.cub
 ```
 
 **Explorer une autre disposition** — [cheese_maze.cub](data/map/good/cheese_maze.cub) propose un labyrinthe avec une sortie, sans objets à collecter ni poursuivant ; la sortie est donc disponible immédiatement.
