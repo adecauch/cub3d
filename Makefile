@@ -6,7 +6,7 @@
 #    By: ramahrez <ramahrez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:32:49 by adecauch          #+#    #+#              #
-#    Updated: 2026/11/09 18:21:19 by adecauch         ###   ########.fr        #
+#    Updated: 2026/11/09 18:28:34 by adecauch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RESET = \033[0m
 NAME = cub3D
 CC = cc
 # J'ai ajoute fsanitize ici pour ton debuggage
-CFLAGS = -Wall -Wextra -Werror -std=c17#-g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=gnu17#-g3 -fsanitize=address
 UNAME_S = $(shell uname -s)
 
 # Variables pour le testeur
